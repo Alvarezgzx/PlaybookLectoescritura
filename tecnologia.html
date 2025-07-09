@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fichero Tecnológico Interactivo para la Lectoescritura</title>
+    <title>Playbook de Lectoescritura: Fichero Tecnológico</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -85,7 +85,8 @@
     <header id="main-header" class="bg-white/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-3">
             <div class="flex items-center justify-between">
-                <a href="#hero" class="text-xl font-bold text-gris-oscuro font-poppins">Playbook de Lectoescritura</a>
+                <!-- MODIFICADO: El enlace ahora apunta a index.html y el título es correcto -->
+                <a href="index.html" class="text-xl font-bold text-gris-oscuro font-poppins">Playbook de Lectoescritura</a>
                 
                 <!-- Mobile Menu Button -->
                 <button id="mobile-menu-button" class="md:hidden">
@@ -169,8 +170,11 @@
                     <div class="feature-item flex items-center justify-center gap-3 bg-white/50 p-3 rounded-lg"><span class="icon">🌍</span> Multilingüe</div>
                     <div class="feature-item flex items-center justify-center gap-3 bg-white/50 p-3 rounded-lg"><span class="icon">🎮</span> Juego Autónomo</div>
                 </div>
-                <div class="scope-info bg-pink-200 text-pink-900 p-3 rounded-lg inline-flex items-center gap-3 mb-6"><span class="icon">👥</span><strong>Alcance:</strong> Niños de 3 a 12 años.</div>
-                <a href="https://dicdicapp.com" target="_blank" class="cta-button inline-block bg-pink-600 text-white font-bold py-3 px-8 rounded-full shadow-lg">Visitar el Sitio Web</a>
+                <div class="flex flex-col items-center gap-4 mb-6">
+                    <div class="scope-info bg-pink-200 text-pink-900 p-3 rounded-lg inline-flex items-center gap-3"><span class="icon">👥</span><strong>Alcance:</strong> Niños de 3 a 12 años.</div>
+                    <div class="scope-info bg-gray-200 text-gray-800 p-3 rounded-lg inline-flex items-center gap-3"><i data-lucide="apple" class="w-5 h-5"></i><strong>Plataforma:</strong> Exclusivo para iOS.</div>
+                </div>
+                <a href="https://apps.apple.com/es/app/dic-dic-dictado-multiling%C3%BCe-para-la-pr%C3%A1ctica-de-la/id643656920" target="_blank" class="cta-button inline-block bg-pink-600 text-white font-bold py-3 px-8 rounded-full shadow-lg">Descargar en la App Store</a>
             </div>
         </section>
 
