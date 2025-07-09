@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook de Lectoescritura - Método Alfabético</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --magenta-principal: #E4007C;
+            --cian-secundario: #00AEEF;
+            --verde-ventaja: #28a745;
+            --rojo-desventaja: #dc3545;
+            --gris-oscuro: #212529;
+            --gris-claro: #F8F9FA;
+            --blanco: #FFFFFF;
+        }
+
+        body { 
+            font-family: 'Lato', sans-serif; 
+            color: var(--gris-oscuro); 
+            background-color: var(--blanco);
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+
+        /* Header Banner */
+        .strategy-header { padding: 4rem 1.5rem; color: var(--blanco); text-align: center; }
+        .strategy-header--sintetico { background-color: var(--cian-secundario); }
+        .header__icon svg { stroke: var(--blanco); width: 64px; height: 64px; margin: 0 auto 1rem; }
+
+        /* Article Content Structure */
+        .strategy-content { max-width: 800px; margin: 0 auto; }
+        .content-block { padding-left: 1.5rem; border-left: 4px solid var(--cian-secundario); margin-top: 3rem; }
+        .strategy-content h4 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; }
+        .strategy-content h5 { font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; }
+        .strategy-content h6 { font-size: 1.1rem; font-weight: 700; margin-top: 0.5rem; }
+        .strategy-content p { line-height: 1.7; }
+
+        /* Advantage & Disadvantage Cards */
+        .advantage-card, .disadvantage-card {
+            background: var(--gris-claro);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .advantage-card .icon, .disadvantage-card .icon {
+            flex-shrink: 0;
+            margin-right: 1rem;
+        }
+        .advantage-card .icon svg { color: var(--verde-ventaja); }
+        .disadvantage-card .icon svg { color: var(--rojo-desventaja); }
+
+        /* Vertical Timeline */
+        .timeline-container { position: relative; padding: 2rem 0; }
+        .timeline-container::after { content: ''; position: absolute; width: 4px; background-color: #e5e7eb; top: 0; bottom: 0; left: 50%; margin-left: -2px; z-index: -1; }
+        .timeline-item { padding: 10px 40px; position: relative; width: 50%; }
+        .timeline-item--left { left: 0; }
+        .timeline-item--right { left: 50%; }
+        .timeline-card { padding: 1.5rem; background: var(--gris-claro); border-radius: 0.5rem; border-top: 4px solid var(--cian-secundario); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        .timeline-node { position: absolute; top: 18px; width: 36px; height: 36px; background-color: var(--cian-secundario); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Poppins', sans-serif; z-index: 2; }
+        .timeline-item--left .timeline-node { right: -18px; }
+        .timeline-item--right .timeline-node { left: -18px; }
+        @media screen and (max-width: 768px) {
+            .timeline-container::after { left: 18px; }
+            .timeline-item { width: 100%; padding-left: 60px; padding-right: 15px; }
+            .timeline-item--left, .timeline-item--right { left: 0; }
+            .timeline-item--left .timeline-node, .timeline-item--right .timeline-node { left: 0; }
+        }
+
+        /* Evaluation Grid */
+        .evaluation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .evaluation-card { background: var(--gris-claro); padding: 1.5rem; border-radius: 0.5rem; text-align: center; }
+        .evaluation-card .card__icon svg { color: var(--cian-secundario); margin: 0 auto 1rem; width: 48px; height: 48px; }
+        .evaluation-card p { font-size: 0.9rem; line-height: 1.6; }
+
+        /* Video & Navigation */
+        .video-responsive-container { position: relative; width: 100%; padding-top: 56.25%; border-radius: 0.5rem; overflow: hidden; }
+        .video-responsive-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .sequential-navigation { display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; }
+        .sequential-navigation a { color: var(--cian-secundario); font-weight: 600; transition: opacity 0.2s; }
+        .sequential-navigation a:hover { opacity: 0.7; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <header id="main-header" class="bg-white/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-bold text-gris-oscuro font-poppins">Playbook de Lectoescritura</a>
+            <a href="estrategias.html" class="nav-link active font-semibold text-sm">Estrategias</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <div class="navigation-bar container mx-auto px-6 pt-6" data-aos="fade-in">
+            <a href="estrategias.html" class="back-link inline-flex items-center text-cian-secundario font-semibold hover:opacity-80 transition-opacity">
+                <i data-lucide="arrow-left" class="mr-2 h-4 w-4"></i>
+                Volver a Todas las Estrategias
+            </a>
+        </div>
+
+        <header class="strategy-header strategy-header--sintetico">
+            <div class="header-content">
+                <div class="header__icon" data-aos="fade-up" data-aos-delay="100"><i data-lucide="sort-asc"></i></div>
+                <h1 class="header__title text-3xl md:text-4xl font-extrabold" data-aos="fade-up" data-aos-delay="200">Ficha Técnica: Método Alfabético o de Deletreo</h1>
+            </div>
+        </header>
+
+        <article class="strategy-content px-6">
+            <section id="fundamento" class="content-block" data-aos="fade-up">
+                <h4>Fundamento Teórico</h4>
+                <p>El Método Alfabético es un enfoque sintético que se basa en el aprendizaje de la forma de las letras y su nombre, no su sonido. Procede de lo particular a lo general, comenzando por las letras para llegar a las palabras. Su enseñanza sigue el orden del alfabeto.</p>
+            </section>
+
+            <section id="ventajas-desventajas" class="content-block" data-aos="fade-up">
+                <h4>Ventajas y Desventajas</h4>
+                <div class="grid md:grid-cols-2 gap-x-8">
+                    <div class="column-pros">
+                        <h5 class="text-green-600">Ventajas</h5>
+                        <div class="advantage-card" data-aos="fade-right" data-aos-delay="200"><span class="icon"><i data-lucide="check-circle"></i></span><span>Es de fácil aplicación y no requiere mucho material.</span></div>
+                        <div class="advantage-card" data-aos="fade-right" data-aos-delay="300"><span class="icon"><i data-lucide="check-circle"></i></span><span>Fomenta el agrado familiar en el aprendizaje.</span></div>
+                        <div class="advantage-card" data-aos="fade-right" data-aos-delay="400"><span class="icon"><i data-lucide="check-circle"></i></span><span>Generalizó el uso de juegos y abecedarios ilustrados.</span></div>
+                    </div>
+                    <div class="column-cons mt-8 md:mt-0">
+                        <h5 class="text-red-600">Desventajas</h5>
+                        <div class="disadvantage-card" data-aos="fade-left" data-aos-delay="200"><span class="icon"><i data-lucide="x-circle"></i></span><span>Rompe el proceso normal de aprendizaje (de lo particular a lo general).</span></div>
+                        <div class="disadvantage-card" data-aos="fade-left" data-aos-delay="300"><span class="icon"><i data-lucide="x-circle"></i></span><span>Es un aprendizaje lento, memorístico y mecanicista.</span></div>
+                        <div class="disadvantage-card" data-aos="fade-left" data-aos-delay="400"><span class="icon"><i data-lucide="x-circle"></i></span><span>Disocia el sonido de la significación.</span></div>
+                        <div class="disadvantage-card" data-aos="fade-left" data-aos-delay="500"><span class="icon"><i data-lucide="x-circle"></i></span><span>Ignora las capacidades cognitivas y la competencia lingüística del niño.</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="aplicacion" class="content-block" data-aos="fade-up">
+                <h4>Guía de Aplicación Paso a Paso</h4>
+                <div class="timeline-container">
+                    <div class="timeline-item timeline-item--left" data-aos="fade-right"><div class="timeline-node">1</div><div class="timeline-card"><h5>Enseñanza del Abecedario</h5><p>Se enseñan todas las letras del abecedario siguiendo el orden alfabético.</p></div></div>
+                    <div class="timeline-item timeline-item--right" data-aos="fade-left"><div class="timeline-node">2</div><div class="timeline-card"><h5>Nombre de la Letra</h5><p>Cada letra se aprende pronunciando su nombre, no su sonido (ej. "pe", "be", "ce").</p></div></div>
+                    <div class="timeline-item timeline-item--left" data-aos="fade-right"><div class="timeline-node">3</div><div class="timeline-card"><h5>Trabajo Simultáneo</h5><p>La lectura y la escritura se trabajan de forma simultánea.</p></div></div>
+                    <div class="timeline-item timeline-item--right" data-aos="fade-left"><div class="timeline-node">4</div><div class="timeline-card"><h5>Combinación</h5><p>Se combinan consonantes y vocales para formar sílabas, luego palabras y oraciones.</p></div></div>
+                    <div class="timeline-item timeline-item--left" data-aos="fade-right"><div class="timeline-node">5</div><div class="timeline-card"><h5>Reglas Adicionales</h5><p>Finalmente, se enseña diptongo, triptongo, mayúsculas, acentuación y puntuación.</p></div></div>
+                </div>
+            </section>
+
+            <section id="evaluacion" class="content-block" data-aos="fade-up">
+                <h4>Evaluación del Aprendizaje</h4>
+                <h5>Estrategias de Evaluación</h5>
+                <div class="evaluation-grid mt-4">
+                    <div class="evaluation-card" data-aos="zoom-in-up" data-aos-delay="100"><div class="card__icon"><i data-lucide="eye"></i></div><h6>Observación Directa</h6><p>Analizar las producciones escritas, copias y dictados para detectar dificultades y guiar el proceso.</p></div>
+                    <div class="evaluation-card" data-aos="zoom-in-up" data-aos-delay="200"><div class="card__icon"><i data-lucide="mic"></i></div><h6>Lectura en Voz Alta</h6><p>Para observar el progreso en la decodificación y la aplicación de reglas.</p></div>
+                    <div class="evaluation-card" data-aos="zoom-in-up" data-aos-delay="300"><div class="card__icon"><i data-lucide="layers"></i></div><h6>Clasificación</h6><p>Pedir al niño que decida si un texto "sirve para leer" basándose en la cantidad y variedad de caracteres.</p></div>
+                    <div class="evaluation-card" data-aos="zoom-in-up" data-aos-delay="400"><div class="card__icon"><i data-lucide="search"></i></div><h6>Interpretación</h6><p>Evaluar cómo el niño relaciona imágenes con texto y segmenta la emisión oral.</p></div>
+                </div>
+                <h5 class="mt-8" data-aos="fade-up">Demostración en Video</h5>
+                <div class="video-responsive-container" data-aos="zoom-in-up" data-aos-delay="200">
+                    <iframe src="https://www.youtube.com/embed/nK4bLYyDK2s" title="Demostración en video del Método Alfabético" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <nav class="sequential-navigation" data-aos="fade-up">
+                <a href="#" class="nav-link prev">« Método Anterior</a>
+                <a href="#" class="nav-link next">Siguiente Método »</a>
+            </nav>
+        </article>
+    </main>
+    
+    <footer class="bg-gris-oscuro text-white py-8 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-sm font-semibold">Elaborado por Jesús Ángel Álvarez González</p>
+            <p class="text-sm mt-2">© 2025 Playbook de Lectoescritura. Todos los derechos reservados.</p>
+            <p class="text-xs mt-2">Diseñado con <span class="text-magenta-principal">♥</span> para educadores innovadores.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 600,
+            once: true,
+            offset: 100,
+        });
+        lucide.createIcons();
+    </script>
+</body>
+</html>
