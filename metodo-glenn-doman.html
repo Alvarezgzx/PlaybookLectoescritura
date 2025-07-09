@@ -96,11 +96,18 @@
         blockquote .icon { margin-right: 1rem; color: var(--cian-secundario); flex-shrink: 0; }
 
         /* Visual Flow */
-        .visual-flow { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem; }
+        .visual-flow { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem; }
         .flow-item { text-align: center; }
         .flow-icon { background-color: var(--gris-claro); border-radius: 50%; padding: 1rem; margin-bottom: 0.5rem; }
         .flow-icon svg { color: var(--cian-secundario); width: 32px; height: 32px; }
         .flow-arrow svg { color: #adb5bd; }
+
+        /* Step by Step Guide Cards */
+        .step-card { display: flex; align-items: flex-start; margin-bottom: 1.5rem; padding: 1.5rem; border-radius: 0.5rem; }
+        .step-card .step-icon { flex-shrink: 0; margin-right: 1.5rem; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+        .step-card .step-icon svg { width: 28px; height: 28px; }
+        .step-card h6 { font-weight: 700; font-size: 1.1rem; }
+        .step-card p { font-size: 0.9rem; color: #495057; line-height: 1.6; }
 
         /* Material Gallery */
         .material-gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; }
@@ -113,6 +120,10 @@
         .evaluation-card .card__icon svg { color: var(--cian-secundario); margin: 0 auto 1rem; width: 40px; height: 40px; }
         .evaluation-card h6 { font-weight: 700; }
         .evaluation-card p { font-size: 0.9rem; }
+
+        /* Video */
+        .video-responsive-container { position: relative; width: 100%; padding-top: 56.25%; border-radius: 0.5rem; overflow: hidden; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); }
+        .video-responsive-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
     </style>
 </head>
@@ -142,6 +153,7 @@
                     <button class="tab-link w-full" role="tab" aria-selected="false" aria-controls="tab-aplicacion"><span class="tab-icon"><i data-lucide="list-steps"></i></span>Guía de Aplicación</button>
                     <button class="tab-link w-full" role="tab" aria-selected="false" aria-controls="tab-material"><span class="tab-icon"><i data-lucide="image"></i></span>Material Visual</button>
                     <button class="tab-link w-full" role="tab" aria-selected="false" aria-controls="tab-evaluacion"><span class="tab-icon"><i data-lucide="target"></i></span>Evaluación</button>
+                    <button class="tab-link w-full" role="tab" aria-selected="false" aria-controls="tab-video"><span class="tab-icon"><i data-lucide="youtube"></i></span>Video Demostrativo</button>
                 </div>
             </nav>
 
@@ -211,6 +223,14 @@
                         <div class="evaluation-card"><div class="card__icon"><i data-lucide="heart-handshake"></i></div><h6>Observación de la Motivación</h6><p>Evaluar el interés y entusiasmo del niño durante las sesiones como principal indicador de éxito.</p></div>
                         <div class="evaluation-card"><div class="card__icon"><i data-lucide="box-select"></i></div><h6>Prueba de Elección</h6><p>Presentar dos tarjetas y pedir al niño que señale la que se nombra para verificar el reconocimiento.</p></div>
                         <div class="evaluation-card"><div class="card__icon"><i data-lucide="book-marked"></i></div><h6>Reconocimiento en Contexto</h6><p>Observar si el niño identifica y señala las palabras aprendidas en libros, carteles u otros textos.</p></div>
+                    </div>
+                </div>
+                
+                <div id="tab-video" class="tab-pane" role="tabpanel">
+                    <h4>Video Demostrativo</h4>
+                    <p class="mb-4">Este video explica en detalle el Método Doman de estimulación temprana. Aprende a usar los 'bits de inteligencia' y sigue las tres etapas de aplicación para fomentar la lectura en niños desde una edad muy temprana.</p>
+                    <div class="video-responsive-container mt-4">
+                        <iframe src="https://www.youtube.com/embed/qx3xrMirqQE?start=92" title="Demostración en video del Método Glenn Doman" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
 
