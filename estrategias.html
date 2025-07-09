@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook de Lectoescritura - Estrategias</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --magenta-principal: #E4007C;
+            --cian-secundario: #00AEEF;
+            --gris-oscuro: #212529;
+            --gris-claro: #F8F9FA;
+            --blanco: #FFFFFF;
+        }
+
+        body { font-family: 'Lato', sans-serif; color: var(--gris-oscuro); background-color: var(--blanco); }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        .font-lato { font-family: 'Lato', sans-serif; }
+        
+        .bg-magenta-principal { background-color: var(--magenta-principal); }
+        .text-magenta-principal { color: var(--magenta-principal); }
+        
+        .bg-cian-secundario { background-color: var(--cian-secundario); }
+        .text-cian-secundario { color: var(--cian-secundario); }
+
+        .bg-gris-oscuro { background-color: var(--gris-oscuro); }
+        .text-gris-oscuro { color: var(--gris-oscuro); }
+        .bg-gris-claro { background-color: var(--gris-claro); }
+
+        /* Navigation Link Styles */
+        .nav-link { transition: color 0.3s ease; }
+        .nav-link.active { color: var(--magenta-principal); font-weight: 700; }
+        .nav-link.active svg { stroke: var(--magenta-principal); }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .strategy-card-wrapper { /* Wrapper for padding */
+            flex: 0 0 100%;
+        }
+        @media (min-width: 768px) {
+            .strategy-card-wrapper {
+                flex: 0 0 50%;
+            }
+        }
+        @media (min-width: 1024px) {
+            .strategy-card-wrapper {
+                flex: 0 0 33.3333%;
+            }
+        }
+        .strategy-card {
+             transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .strategy-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        .filter-btn.active {
+            background-color: var(--magenta-principal);
+            color: var(--blanco);
+            border-color: var(--magenta-principal);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header id="main-header" class="bg-white/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-xl font-bold text-gris-oscuro font-poppins">Playbook de Lectoescritura</a>
+                <button id="mobile-menu-button" class="md:hidden"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                <ul id="desktop-nav" class="hidden md:flex items-center space-x-4 text-sm">
+                    <li><a href="fundamentos.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><i data-lucide="brain-circuit"></i><span>Fundamentos Neuropsicológicos del Proceso</span></a></li>
+                    <li><a href="estrategias.html" class="nav-link active flex items-center space-x-2"><i data-lucide="layers"></i><span>Estrategias</span></a></li>
+                    <li><a href="tecnologia.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><i data-lucide="plug-zap"></i><span>Tecnología</span></a></li>
+                    <li><a href="psicomotricidad.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><i data-lucide="pencil-ruler"></i><span>Psicomotricidad</span></a></li>
+                    <li><a href="a-lo-largo-de-la-vida.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><i data-lucide="book-open-check"></i><span>Lectoescritura a lo largo de la vida</span></a></li>
+                </ul>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <ul class="flex flex-col space-y-4">
+                    <li><a href="index.html" class="nav-link block py-2 text-gray-600">Inicio</a></li>
+                    <li><a href="fundamentos.html" class="nav-link block py-2 text-gray-600">Fundamentos Neuropsicológicos del Proceso</a></li>
+                    <li><a href="estrategias.html" class="nav-link active block py-2 text-gray-600">Estrategias</a></li>
+                    <li><a href="tecnologia.html" class="nav-link block py-2 text-gray-600">Tecnología</a></li>
+                    <li><a href="psicomotricidad.html" class="nav-link block py-2 text-gray-600">Psicomotricidad</a></li>
+                    <li><a href="a-lo-largo-de-la-vida.html" class="nav-link block py-2 text-gray-600">Lectoescritura a lo largo de la vida</a></li>
+                    <li><a href="conclusion.html" class="nav-link block py-2 text-gray-600">Conclusión</a></li>
+                    <li><a href="bibliografia.html" class="nav-link block py-2 text-gray-600">Bibliografía</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+        <div class="text-center mb-12">
+            <i data-lucide="layers" class="mx-auto text-magenta-principal" style="width: 64px; height: 64px;"></i>
+            <h2 class="text-3xl md:text-4xl font-bold text-gris-oscuro mt-4">Explora las Estrategias Metodológicas</h2>
+            <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Desliza para descubrir diferentes métodos. Cada tarjeta te ofrece una vista previa; haz clic en "Ver Estrategia Completa" para acceder a la guía detallada.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div id="filter-bar" class="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="alfabetico">Alfabético</button>
+            <button class="filter-btn" data-filter="fonetico">Fonético</button>
+            <button class="filter-btn" data-filter="doman">Glenn Doman</button>
+            <button class="filter-btn" data-filter="silabico">Silábico</button>
+            <button class="filter-btn" data-filter="palabras">Palabras Normales</button>
+            <button class="filter-btn" data-filter="global">Global</button>
+        </div>
+
+        <!-- Carousel -->
+        <div class="carousel-container">
+            <div id="carousel-track" class="carousel-track -mx-4">
+                <!-- Card 1: Alfabético -->
+                <div class="strategy-card-wrapper px-4" data-method="alfabetico">
+                    <div class="strategy-card bg-gris-claro rounded-lg shadow-md p-6 h-full flex flex-col">
+                        <i data-lucide="sort-asc" class="mx-auto text-cian-secundario mb-4" style="width: 48px; height: 48px;"></i>
+                        <h3 class="text-xl font-bold text-center text-gris-oscuro mb-2">Método Alfabético</h3>
+                        <p class="text-gray-600 text-center text-sm flex-grow">Un método sintético que parte de la memorización del abecedario y el nombre de cada letra para luego combinarlas y construir palabras.</p>
+                        <a href="#" class="mt-6 block w-full text-center bg-magenta-principal text-white py-2.5 rounded-lg hover:bg-opacity-90 transition-colors font-semibold">Ver Estrategia Completa</a>
+                    </div>
+                </div>
+                <!-- Card 2: Fonético -->
+                <div class="strategy-card-wrapper px-4" data-method="fonetico">
+                    <div class="strategy-card bg-gris-claro rounded-lg shadow-md p-6 h-full flex flex-col">
+                        <i data-lucide="audio-lines" class="mx-auto text-cian-secundario mb-4" style="width: 48px; height: 48px;"></i>
+                        <h3 class="text-xl font-bold text-center text-gris-oscuro mb-2">Método Fonético</h3>
+                        <p class="text-gray-600 text-center text-sm flex-grow">Se enfoca en aprender la relación directa entre el sonido de la letra (fonema) y su símbolo escrito (grafema), facilitando la decodificación.</p>
+                        <a href="#" class="mt-6 block w-full text-center bg-magenta-principal text-white py-2.5 rounded-lg hover:bg-opacity-90 transition-colors font-semibold">Ver Estrategia Completa</a>
+                    </div>
+                </div>
+                <!-- Card 3: Glenn Doman -->
+                <div class="strategy-card-wrapper px-4" data-method="doman">
+                    <div class="strategy-card bg-gris-claro rounded-lg shadow-md p-6 h-full flex flex-col">
+                        <i data-lucide="rectangle-horizontal" class="mx-auto text-cian-secundario mb-4" style="width: 48px; height: 48px;"></i>
+                        <h3 class="text-xl font-bold text-center text-gris-oscuro mb-2">Método Glenn Doman</h3>
+                        <p class="text-gray-600 text-center text-sm flex-grow">Un método de estimulación visual temprana que enseña palabras completas a través de "bits de lectura", fomentando la memoria fotográfica.</p>
+                        <a href="#" class="mt-6 block w-full text-center bg-magenta-principal text-white py-2.5 rounded-lg hover:bg-opacity-90 transition-colors font-semibold">Ver Estrategia Completa</a>
+                    </div>
+                </div>
+                <!-- Card 4: Silábico -->
+                <div class="strategy-card-wrapper px-4" data-method="silabico">
+                    <div class="strategy-card bg-gris-claro rounded-lg shadow-md p-6 h-full flex flex-col">
+                        <i data-lucide="blocks" class="mx-auto text-cian-secundario mb-4" style="width: 48px; height: 48px;"></i>
+                        <h3 class="text-xl font-bold text-center text-gris-oscuro mb-2">Método Silábico</h3>
+                        <p class="text-gray-600 text-center text-sm flex-grow">Toma la sílaba como unidad de aprendizaje. Se memorizan familias silábicas (pa, pe, pi, po, pu) para luego combinarlas y formar palabras.</p>
+                        <a href="#" class="mt-6 block w-full text-center bg-magenta-principal text-white py-2.5 rounded-lg hover:bg-opacity-90 transition-colors font-semibold">Ver Estrategia Completa</a>
+                    </div>
+                </div>
+                <!-- Card 5: Palabras Normales -->
+                 <div class="strategy-card-wrapper px-4" data-method="palabras">
+                    <div class="strategy-card bg-gris-claro rounded-lg shadow-md p-6 h-full flex flex-col">
+                        <i data-lucide="scan-text" class="mx-auto text-cian-secundario mb-4" style="width: 48px; height: 48px;"></i>
+                        <h3 class="text-xl font-bold text-center text-gris-oscuro mb-2">Método de Palabras Normales</h3>
+                        <p class="text-gray-600 text-center text-sm flex-grow">Parte de una palabra significativa para el niño, la descompone en sílabas y letras, y luego usa esas partes para crear nuevas palabras.</p>
+                        <a href="#" class="mt-6 block w-full text-center bg-magenta-principal text-white py-2.5 rounded-lg hover:bg-opacity-90 transition-colors font-semibold">Ver Estrategia Completa</a>
+                    </div>
+                </div>
+                <!-- Card 6: Global -->
+                <div class="strategy-card-wrapper px-4" data-method="global">
+                    <div class="strategy-card bg-gris-claro rounded-lg shadow-md p-6 h-full flex flex-col">
+                        <i data-lucide="quote" class="mx-auto text-cian-secundario mb-4" style="width: 48px; height: 48px;"></i>
+                        <h3 class="text-xl font-bold text-center text-gris-oscuro mb-2">Método Global</h3>
+                        <p class="text-gray-600 text-center text-sm flex-grow">Un enfoque analítico que prioriza la comprensión, partiendo de frases completas con significado que luego se analizan en sus componentes.</p>
+                        <a href="#" class="mt-6 block w-full text-center bg-magenta-principal text-white py-2.5 rounded-lg hover:bg-opacity-90 transition-colors font-semibold">Ver Estrategia Completa</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation Buttons -->
+            <button id="prev-btn" class="absolute top-1/2 left-0 md:-left-4 transform -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 shadow-md transition"><i data-lucide="chevron-left" class="text-gris-oscuro"></i></button>
+            <button id="next-btn" class="absolute top-1/2 right-0 md:-right-4 transform -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 shadow-md transition"><i data-lucide="chevron-right" class="text-gris-oscuro"></i></button>
+        </div>
+    </main>
+    
+    <footer class="bg-gris-oscuro text-white py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Playbook de Lectoescritura. Todos los derechos reservados.</p>
+            <p class="text-sm mt-2">Diseñado con <span class="text-magenta-principal">&hearts;</span> para educadores innovadores.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Carousel and Filter Logic
+        const track = document.getElementById('carousel-track');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const filterBar = document.getElementById('filter-bar');
+        
+        let currentIndex = 0;
+        const cards = Array.from(track.children);
+        const totalCards = cards.length;
+        
+        const getVisibleCardsCount = () => {
+            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 768) return 2;
+            return 1;
+        };
+
+        const updateCarousel = () => {
+            const cardWidth = cards[0].offsetWidth;
+            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+            const visibleCards = getVisibleCardsCount();
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex >= totalCards - visibleCards;
+            prevBtn.style.opacity = prevBtn.disabled ? '0.5' : '1';
+            nextBtn.style.opacity = nextBtn.disabled ? '0.5' : '1';
+        };
+
+        nextBtn.addEventListener('click', () => {
+            const visibleCards = getVisibleCardsCount();
+            if (currentIndex < totalCards - visibleCards) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        filterBar.addEventListener('click', (e) => {
+            if (e.target.tagName !== 'BUTTON') return;
+
+            const filterValue = e.target.dataset.filter;
+            
+            // Update active state on buttons
+            filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            
+            let targetIndex = 0;
+            if (filterValue !== 'all') {
+                targetIndex = cards.findIndex(card => card.dataset.method === filterValue);
+            }
+            
+            const visibleCards = getVisibleCardsCount();
+            currentIndex = Math.min(targetIndex, totalCards - visibleCards);
+            updateCarousel();
+        });
+        
+        // Style filter buttons
+        filterBar.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.add('bg-white', 'text-gray-700', 'px-4', 'py-2', 'rounded-full', 'text-sm', 'font-semibold', 'border', 'border-gray-300', 'hover:bg-gray-100', 'transition-colors');
+            if(btn.classList.contains('active')) {
+                 btn.classList.remove('bg-white', 'text-gray-700', 'border-gray-300', 'hover:bg-gray-100');
+                 btn.classList.add('bg-magenta-principal', 'text-white', 'border-magenta-principal');
+            }
+        });
+        
+        // Adjust carousel on window resize
+        window.addEventListener('resize', () => {
+            // Recalculate index to prevent it from being out of bounds
+            const visibleCards = getVisibleCardsCount();
+            if (currentIndex > totalCards - visibleCards) {
+                currentIndex = totalCards - visibleCards;
+            }
+            updateCarousel();
+        });
+        
+        // Initial setup
+        // Use a small timeout to ensure all elements are rendered and widths are calculated correctly
+        setTimeout(updateCarousel, 100);
+
+    </script>
+</body>
+</html>

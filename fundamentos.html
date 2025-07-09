@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook de Lectoescritura - Fundamentos</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --magenta-principal: #E4007C;
+            --cian-secundario: #00AEEF;
+            --gris-oscuro: #212529;
+            --gris-claro: #F8F9FA;
+            --blanco: #FFFFFF;
+        }
+
+        body { font-family: 'Lato', sans-serif; color: var(--gris-oscuro); background-color: var(--blanco); }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        .font-lato { font-family: 'Lato', sans-serif; }
+        
+        .bg-magenta-principal { background-color: var(--magenta-principal); }
+        .text-magenta-principal { color: var(--magenta-principal); }
+        
+        .bg-cian-secundario { background-color: var(--cian-secundario); }
+        .text-cian-secundario { color: var(--cian-secundario); }
+
+        .bg-gris-oscuro { background-color: var(--gris-oscuro); }
+        .text-gris-oscuro { color: var(--gris-oscuro); }
+        .bg-gris-claro { background-color: var(--gris-claro); }
+
+        /* Navigation Link Styles */
+        .nav-link { transition: color 0.3s ease; }
+        .nav-link.active { color: var(--magenta-principal); font-weight: 700; }
+        .nav-link.active svg { stroke: var(--magenta-principal); }
+
+        /* Accordion Styles */
+        .accordion-content {
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, padding 0.4s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .accordion-header .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-header.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* Cyan Accordion */
+        .accordion--cyan .accordion-header.active {
+            background-color: var(--cian-secundario);
+            color: var(--blanco);
+        }
+        .accordion--cyan .accordion-header.active svg,
+        .accordion--cyan .accordion-header.active h3 {
+            stroke: var(--blanco);
+            color: var(--blanco);
+        }
+
+        /* Magenta Accordion */
+        .accordion--magenta .accordion-header.active {
+            background-color: var(--magenta-principal);
+            color: var(--blanco);
+        }
+         .accordion--magenta .accordion-header.active svg,
+         .accordion--magenta .accordion-header.active h3 {
+            stroke: var(--blanco);
+            color: var(--blanco);
+        }
+
+        .accordion-content ul {
+            list-style-position: outside;
+            padding-left: 1.5rem;
+        }
+        .accordion-content li::marker {
+            color: var(--magenta-principal);
+            font-weight: bold;
+        }
+        .accordion-content blockquote {
+            border-left: 4px solid var(--cian-secundario);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: #555;
+            background-color: #f8f9fa;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header id="main-header" class="bg-white/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-xl font-bold text-gris-oscuro font-poppins">Playbook de Lectoescritura</a>
+                <button id="mobile-menu-button" class="md:hidden"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                <ul id="desktop-nav" class="hidden md:flex items-center space-x-4 text-sm">
+                    <li><a href="fundamentos.html" class="nav-link active flex items-center space-x-2"><i data-lucide="brain-circuit"></i><span>Fundamentos Neuropsicológicos del Proceso</span></a></li>
+                    <li><a href="estrategias.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><i data-lucide="layers"></i><span>Estrategias</span></a></li>
+                    <li><a href="tecnologia.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><i data-lucide="plug-zap"></i><span>Tecnología</span></a></li>
+                    <li><a href="psicomotricidad.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><i data-lucide="pencil-ruler"></i><span>Psicomotricidad</span></a></li>
+                    <li><a href="a-lo-largo-de-la-vida.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><i data-lucide="book-open-check"></i><span>Lectoescritura a lo largo de la vida</span></a></li>
+                </ul>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <ul class="flex flex-col space-y-4">
+                    <li><a href="index.html" class="nav-link block py-2 text-gray-600">Inicio</a></li>
+                    <li><a href="fundamentos.html" class="nav-link active block py-2 text-gray-600">Fundamentos Neuropsicológicos del Proceso</a></li>
+                    <li><a href="estrategias.html" class="nav-link block py-2 text-gray-600">Estrategias</a></li>
+                    <li><a href="tecnologia.html" class="nav-link block py-2 text-gray-600">Tecnología</a></li>
+                    <li><a href="psicomotricidad.html" class="nav-link block py-2 text-gray-600">Psicomotricidad</a></li>
+                    <li><a href="a-lo-largo-de-la-vida.html" class="nav-link block py-2 text-gray-600">Lectoescritura a lo largo de la vida</a></li>
+                    <li><a href="conclusion.html" class="nav-link block py-2 text-gray-600">Conclusión</a></li>
+                    <li><a href="bibliografia.html" class="nav-link block py-2 text-gray-600">Bibliografía</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+        <!-- Section 1: Etapas de Adquisición -->
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <i data-lucide="milestone" class="mx-auto text-cian-secundario" style="width: 64px; height: 64px;"></i>
+                <h2 class="text-3xl md:text-4xl font-bold text-gris-oscuro mt-4">Las Etapas de la Adquisición de la Lectoescritura</h2>
+            </div>
+            <div id="accordion-etapas" class="accordion-container accordion--cyan max-w-4xl mx-auto space-y-4">
+                <!-- Etapa Presilábica -->
+                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                    <button class="accordion-header w-full flex items-center justify-between p-5 text-left bg-gris-claro hover:bg-gray-200 transition-colors duration-300" aria-expanded="false">
+                        <span class="flex items-center space-x-4"><i data-lucide="waves" class="text-cian-secundario"></i><h3 class="text-xl font-bold font-poppins text-gris-oscuro">1. Etapa Presilábica</h3></span>
+                        <i data-lucide="chevron-down" class="toggle-icon text-gris-oscuro"></i>
+                    </button>
+                    <div class="accordion-content" role="region"><div class="p-5 font-lato text-gris-oscuro" style="line-height: 1.6;"><p class="mb-4">En este nivel inicial, el niño aún no ha comprendido la relación directa entre los sonidos del habla y las letras escritas.</p><ul class="space-y-3"><li><strong>Diferenciación entre dibujo y escritura:</strong> El niño comienza a distinguir que los dibujos representan objetos y la escritura representa nombres.</li><li><strong>Grafismos primitivos:</strong> Los primeros intentos de escritura pueden ser trazos ondulados continuos o series de pequeños redondeles o líneas verticales.</li><li><strong>Hipótesis del nombre:</strong> El texto se concibe como una "etiqueta" del dibujo, representando el nombre del objeto dibujado.</li><li><strong>Requerimiento de cantidad y variedad:</strong> Para que un texto sea "legible", el niño exige una cantidad (mínimo 3) y variedad de caracteres.</li></ul></div></div>
+                </div>
+                <!-- Etapa Silábica -->
+                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                    <button class="accordion-header w-full flex items-center justify-between p-5 text-left bg-gris-claro hover:bg-gray-200 transition-colors duration-300" aria-expanded="false">
+                        <span class="flex items-center space-x-4"><i data-lucide="case-sensitive" class="text-cian-secundario"></i><h3 class="text-xl font-bold font-poppins text-gris-oscuro">2. Etapa Silábica</h3></span>
+                        <i data-lucide="chevron-down" class="toggle-icon text-gris-oscuro"></i>
+                    </button>
+                    <div class="accordion-content" role="region"><div class="p-5 font-lato text-gris-oscuro" style="line-height: 1.6;"><p class="mb-4">Este es un momento crucial en el que el niño descubre que existe una relación entre las partes de la escritura y las partes de la emisión oral.</p><ul class="space-y-3"><li><strong>Correspondencia sílaba-letra:</strong> La hipótesis fundamental del niño es que cada letra representa una sílaba.</li><li><strong>Valor sonoro inicial:</strong> El niño intenta dar un valor sonoro a cada letra, pudiendo ser fijo para algunas o variar.</li><li><strong>Conflictos cognitivos:</strong> Esta hipótesis entra en conflicto con las exigencias previas de cantidad mínima y con las formas fijas de escritura aprendidas.</li></ul></div></div>
+                </div>
+                <!-- Etapa Silábico-Alfabética -->
+                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                    <button class="accordion-header w-full flex items-center justify-between p-5 text-left bg-gris-claro hover:bg-gray-200 transition-colors duration-300" aria-expanded="false">
+                        <span class="flex items-center space-x-4"><i data-lucide="baseline" class="text-cian-secundario"></i><h3 class="text-xl font-bold font-poppins text-gris-oscuro">3. Etapa Silábico-Alfabética</h3></span>
+                        <i data-lucide="chevron-down" class="toggle-icon text-gris-oscuro"></i>
+                    </button>
+                    <div class="accordion-content" role="region"><div class="p-5 font-lato text-gris-oscuro" style="line-height: 1.6;"><p class="mb-4">Esta es una fase de transición donde el niño comienza a abandonar la hipótesis silábica y a acercarse a la lógica del sistema alfabético.</p><ul class="space-y-3"><li><strong>Convivencia de hipótesis:</strong> El niño aún puede usar la hipótesis silábica, pero empieza a mostrar indicios de un análisis más allá de la sílaba.</li><li><strong>Análisis más profundo:</strong> El conflicto entre la hipótesis silábica y la exigencia de cantidad mínima obliga al niño a buscar una partición más allá de la sílaba.</li></ul></div></div>
+                </div>
+                <!-- Etapa Alfabética -->
+                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                    <button class="accordion-header w-full flex items-center justify-between p-5 text-left bg-gris-claro hover:bg-gray-200 transition-colors duration-300" aria-expanded="false">
+                        <span class="flex items-center space-x-4"><i data-lucide="type" class="text-cian-secundario"></i><h3 class="text-xl font-bold font-poppins text-gris-oscuro">4. Etapa Alfabética</h3></span>
+                        <i data-lucide="chevron-down" class="toggle-icon text-gris-oscuro"></i>
+                    </button>
+                    <div class="accordion-content" role="region"><div class="p-5 font-lato text-gris-oscuro" style="line-height: 1.6;"><p class="mb-4">En esta etapa, el niño ha comprendido la naturaleza fundamental del sistema de escritura alfabético: cada letra representa un fonema (sonido).</p><ul class="space-y-3"><li><strong>Correspondencia fonema-grafema:</strong> El niño ha superado la "barrera del código" y comprende que los caracteres corresponden a valores sonoros menores que la sílaba.</li><li><strong>Escritura fonética:</strong> Las producciones escritas reflejan este análisis fonético.</li><li><strong>Inicio de la etapa ortográfica:</strong> Una vez comprendido el principio alfabético, las dificultades que persisten son principalmente de índole ortográfica.</li></ul></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Principios Neurológicos -->
+        <section>
+            <div class="text-center mb-12">
+                <i data-lucide="brain-circuit" class="mx-auto text-magenta-principal" style="width: 64px; height: 64px;"></i>
+                <h2 class="text-3xl md:text-4xl font-bold text-gris-oscuro mt-4">Principios Neurológicos de la Lectoescritura</h2>
+            </div>
+            <div id="accordion-neuro" class="accordion-container accordion--magenta max-w-4xl mx-auto space-y-4">
+                <!-- Introducción -->
+                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                    <button class="accordion-header w-full flex items-center justify-between p-5 text-left bg-gris-claro hover:bg-gray-200 transition-colors duration-300" aria-expanded="false">
+                        <span class="flex items-center space-x-4"><i data-lucide="brain" class="text-magenta-principal"></i><h3 class="text-xl font-bold font-poppins text-gris-oscuro">Introducción a las Bases Neuropsicofisiológicas</h3></span>
+                        <i data-lucide="chevron-down" class="toggle-icon text-gris-oscuro"></i>
+                    </button>
+                    <div class="accordion-content" role="region"><div class="p-5 font-lato text-gris-oscuro" style="line-height: 1.6;"><p>El conocimiento de las bases neuropsicofisiológicas es fundamental para influir positivamente en la adquisición del lenguaje escrito. El proceso integra componentes psicológicos, lingüísticos y neurológicos, dirigido por el cerebro. Analizadores como el motor, visual y auditivo son fundamentales.</p></div></div>
+                </div>
+                <!-- Perspectiva de Luria -->
+                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                    <button class="accordion-header w-full flex items-center justify-between p-5 text-left bg-gris-claro hover:bg-gray-200 transition-colors duration-300" aria-expanded="false">
+                        <span class="flex items-center space-x-4"><i data-lucide="network" class="text-magenta-principal"></i><h3 class="text-xl font-bold font-poppins text-gris-oscuro">I. Perspectiva de Luria sobre la Escritura</h3></span>
+                        <i data-lucide="chevron-down" class="toggle-icon text-gris-oscuro"></i>
+                    </button>
+                    <div class="accordion-content" role="region"><div class="p-5 font-lato text-gris-oscuro" style="line-height: 1.6;"><p class="mb-4">Según A.R. Luria, el acto de escribir se concibe como un sistema funcional complejo. Su perspectiva destaca que:</p><ul class="space-y-3"><li>La escritura es un proceso muy complejo cuya estructura psicológica incluye una serie de eslabones.</li><li>Ninguno de estos eslabones puede estar funcionalmente alterado sin que se vea afectado todo el sistema funcional.</li><li>Escribir demanda la articulación y el funcionamiento adecuado de varias zonas del cerebro.</li></ul></div></div>
+                </div>
+                <!-- Perspectiva de Ardila: Lectura -->
+                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                    <button class="accordion-header w-full flex items-center justify-between p-5 text-left bg-gris-claro hover:bg-gray-200 transition-colors duration-300" aria-expanded="false">
+                        <span class="flex items-center space-x-4"><i data-lucide="book-open" class="text-magenta-principal"></i><h3 class="text-xl font-bold font-poppins text-gris-oscuro">II. Perspectiva de Ardila: Para la Lectura</h3></span>
+                        <i data-lucide="chevron-down" class="toggle-icon text-gris-oscuro"></i>
+                    </button>
+                    <div class="accordion-content" role="region"><div class="p-5 font-lato text-gris-oscuro" style="line-height: 1.6;"><p class="mb-4">Ginna Marcela Ardila Villareal (2022) subraya que la lectura y la escritura son habilidades que implican procesos neurofisiológicos, neuropsicológicos y pedagógicos.</p><h4 class="font-poppins font-bold mt-4 mb-2">A. Prerrequisitos Cognitivos Clave:</h4><ul class="space-y-2"><li>Procesamiento fonológico</li><li>Denominación automatizada rápida</li><li>Automaticidad motora</li><li>Percepción del habla</li><li>Memoria a corto plazo</li></ul><h4 class="font-poppins font-bold mt-4 mb-2">B. Habilidades Cognitivas Implicadas:</h4><ul class="space-y-2"><li>Atención</li><li>Memoria</li><li>Lenguaje</li><li>Abstracción</li></ul><blockquote><strong>Nota:</strong> Las alteraciones en estas funciones inespecíficas pueden afectar significativamente la lectura.</blockquote><h4 class="font-poppins font-bold mt-4 mb-2">C. Redes Corticales y Funciones Específicas:</h4><ul class="space-y-3"><li><strong>Regiones superiores del lóbulo temporal izquierdo:</strong> Cruciales para integrar la percepción visual y auditiva (ruta fonológica).</li><li><strong>Estructuras que involucran la articulación:</strong> Desempeñan un papel fundamental en este proceso.</li><li><strong>Ruta léxica (dar significado):</strong> Regiones frontales y temporales cumplen una función esencial.</li></ul><p class="figure-reference mt-4 italic text-sm"><em>(Ver "Figura 2 Redes corticales que intervienen en el proceso de la lectura" en la fuente).</em></p></div></div>
+                </div>
+                <!-- Perspectiva de Ardila: Escritura -->
+                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                    <button class="accordion-header w-full flex items-center justify-between p-5 text-left bg-gris-claro hover:bg-gray-200 transition-colors duration-300" aria-expanded="false">
+                        <span class="flex items-center space-x-4"><i data-lucide="edit-3" class="text-magenta-principal"></i><h3 class="text-xl font-bold font-poppins text-gris-oscuro">III. Perspectiva de Ardila: Para la Escritura</h3></span>
+                        <i data-lucide="chevron-down" class="toggle-icon text-gris-oscuro"></i>
+                    </button>
+                    <div class="accordion-content" role="region"><div class="p-5 font-lato text-gris-oscuro" style="line-height: 1.6;"><p class="mb-4">La escritura exige el trabajo conjunto de varias zonas corticales y un funcionamiento neurofisiológico adecuado.</p><h4 class="font-poppins font-bold mt-4 mb-2">A. Procesos Cognitivos Indispensables:</h4><p>Cuetos (2009) señala al menos cuatro procesos cognitivos indispensables en la lengua escrita.</p><h4 class="font-poppins font-bold mt-4 mb-2">B. Redes Corticales y Funciones Específicas:</h4><ul class="space-y-3"><li><strong>Construcción de la estructura sintáctica:</strong> Atribuida al área de Broca.</li><li><strong>Selección de palabras (búsqueda lexical):</strong> Activa la zona parieto-temporal izquierda.</li><li><strong>Vía subléxica (reglas gramaticales):</strong> Depende de las áreas alrededor de la cisura de Silvio.</li><li><strong>Procesos motores para trazar letras:</strong> Dependen de redes en los lóbulos parietales y frontales (Área de Exner).</li></ul><p class="figure-reference mt-4 italic text-sm"><em>(Ver "Figura 3 Redes corticales que intervienen en el proceso de la escritura" en la fuente).</em></p><h4 class="font-poppins font-bold mt-4 mb-2">C. Conciencia Fonológica:</h4><ul class="space-y-3"><li>Fundamental para analizar los sonidos del lenguaje y establecer conexiones con los grafemas.</li><li>Específicamente, la conciencia fonémica es esencial para comprender la relación entre el lenguaje hablado y escrito.</li></ul></div></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-gris-oscuro text-white py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Playbook de Lectoescritura. Todos los derechos reservados.</p>
+            <p class="text-sm mt-2">Diseñado con <span class="text-magenta-principal">&hearts;</span> para educadores innovadores.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Accordion functionality for multiple independent accordions
+        document.querySelectorAll('.accordion-container').forEach(container => {
+            const headers = container.querySelectorAll('.accordion-header');
+            headers.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const isExpanded = header.classList.contains('active');
+
+                    // Close any currently open accordion item within the same container
+                    const currentlyActiveHeader = container.querySelector('.accordion-header.active');
+                    if (currentlyActiveHeader && currentlyActiveHeader !== header) {
+                        currentlyActiveHeader.classList.remove('active');
+                        currentlyActiveHeader.setAttribute('aria-expanded', 'false');
+                        const activeContent = currentlyActiveHeader.nextElementSibling;
+                        activeContent.style.maxHeight = '0px';
+                        activeContent.style.opacity = '0';
+                        activeContent.style.paddingTop = '0';
+                        activeContent.style.paddingBottom = '0';
+                    }
+
+                    // Toggle the clicked header
+                    header.classList.toggle('active');
+                    if (!isExpanded) {
+                        header.setAttribute('aria-expanded', 'true');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        content.style.opacity = '1';
+                        content.style.paddingTop = '1.25rem';
+                        content.style.paddingBottom = '1.25rem';
+                    } else {
+                        header.setAttribute('aria-expanded', 'false');
+                        content.style.maxHeight = '0px';
+                        content.style.opacity = '0';
+                        content.style.paddingTop = '0';
+                        content.style.paddingBottom = '0';
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
