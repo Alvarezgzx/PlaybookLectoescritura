@@ -14,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* Custom styles to integrate the project's visual identity with Tailwind */
         :root {
             --magenta-principal: #E4007C;
             --cian-secundario: #00AEEF;
@@ -22,44 +21,11 @@
             --gris-claro: #F8F9FA;
             --blanco: #FFFFFF;
         }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            color: var(--gris-oscuro);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .font-poppins { font-family: 'Poppins', sans-serif; }
-        .font-lato { font-family: 'Lato', sans-serif; }
-        
-        .bg-magenta-principal { background-color: var(--magenta-principal); }
-        .text-magenta-principal { color: var(--magenta-principal); }
-        .border-magenta-principal { border-color: var(--magenta-principal); }
-        
-        .bg-cian-secundario { background-color: var(--cian-secundario); }
-        .text-cian-secundario { color: var(--cian-secundario); }
-        .border-cian-secundario { border-color: var(--cian-secundario); }
-
-        .bg-gris-oscuro { background-color: var(--gris-oscuro); }
-        .text-gris-oscuro { color: var(--gris-oscuro); }
-
-        .bg-gris-claro { background-color: var(--gris-claro); }
-
-        /* Style for active navigation link */
-        .nav-link.active {
-            color: var(--magenta-principal);
-            font-weight: 700;
-        }
-        .nav-link.active .emoji-icon {
-            transform: scale(1.2);
-        }
-        .emoji-icon {
-            font-size: 1.25rem;
-            transition: transform 0.3s ease;
-        }
+        body { font-family: 'Lato', sans-serif; color: var(--gris-oscuro); }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+        .nav-link.active { color: var(--magenta-principal); font-weight: 700; }
+        .nav-link.active .emoji-icon { transform: scale(1.2); }
+        .emoji-icon { font-size: 1.25rem; transition: transform 0.3s ease; }
     </style>
 </head>
 <body class="bg-blanco">
@@ -69,19 +35,14 @@
         <nav class="container mx-auto px-6 py-3">
             <div class="flex items-center justify-between">
                 <a href="index.html" class="text-xl font-bold text-gris-oscuro font-poppins">Playbook de Lectoescritura</a>
-                
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-3xl">
-                    ☰
-                </button>
+                <button id="mobile-menu-button" class="md:hidden text-3xl">☰</button>
 
                 <!-- Desktop Navigation -->
-                <ul id="desktop-nav" class="hidden md:flex items-center space-x-4 text-sm">
+                <ul id="desktop-nav" class="hidden md:flex items-center space-x-6 text-sm">
                     <li><a href="fundamentos.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><span class="emoji-icon">🧠</span><span>Fundamentos Neuropsicológicos</span></a></li>
                     <li><a href="estrategias.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><span class="emoji-icon">📚</span><span>Métodos de Enseñanza</span></a></li>
                     <li><a href="tecnologia.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><span class="emoji-icon">💻</span><span>Herramientas Digitales</span></a></li>
                     <li><a href="psicomotricidad.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><span class="emoji-icon">✏️</span><span>Grafomotricidad</span></a></li>
-                    <li><a href="a-lo-largo-de-la-vida.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><span class="emoji-icon">📖</span><span>Lectoescritura a lo largo de la vida</span></a></li>
                 </ul>
             </div>
             
@@ -93,7 +54,6 @@
                     <li><a href="estrategias.html" class="nav-link block py-2 text-gray-600">Métodos de Enseñanza</a></li>
                     <li><a href="tecnologia.html" class="nav-link block py-2 text-gray-600">Herramientas Digitales</a></li>
                     <li><a href="psicomotricidad.html" class="nav-link block py-2 text-gray-600">Grafomotricidad</a></li>
-                    <li><a href="a-lo-largo-de-la-vida.html" class="nav-link block py-2 text-gray-600">Lectoescritura a lo largo de la vida</a></li>
                     <li><a href="conclusion.html" class="nav-link block py-2 text-gray-600">Conclusión</a></li>
                     <li><a href="bibliografia.html" class="nav-link block py-2 text-gray-600">Bibliografía</a></li>
                 </ul>
@@ -102,7 +62,6 @@
     </header>
 
     <main>
-        <!-- Section 1: Punto de Partida -->
         <section id="page-1" class="min-h-screen flex flex-col justify-center items-center bg-gris-claro pt-20 pb-20">
             <div class="text-center container mx-auto px-6">
                 <div class="mb-12">
@@ -113,7 +72,7 @@
                 
                 <div class="mt-12">
                     <h3 class="text-2xl font-bold text-gris-oscuro font-poppins mb-8">Explora los Módulos</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                         <a href="fundamentos.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
                             <span class="text-4xl mb-2">🧠</span>
                             <span class="font-semibold text-center">Fundamentos Neuropsicológicos</span>
@@ -129,10 +88,6 @@
                         <a href="psicomotricidad.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
                             <span class="text-4xl mb-2">✏️</span>
                             <span class="font-semibold text-center">Grafomotricidad</span>
-                        </a>
-                        <a href="a-lo-largo-de-la-vida.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
-                            <span class="text-4xl mb-2">📖</span>
-                            <span class="font-semibold text-center">Lectoescritura a lo largo de la vida</span>
                         </a>
                         <a href="bibliografia.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
                             <span class="text-4xl mb-2">🗂️</span>
@@ -153,20 +108,16 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-        
-        // Close mobile menu on link click
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
-
     </script>
 </body>
 </html>
