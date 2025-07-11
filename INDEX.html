@@ -13,9 +13,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
     
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
     <style>
         /* Custom styles to integrate the project's visual identity with Tailwind */
         :root {
@@ -56,8 +53,12 @@
             color: var(--magenta-principal);
             font-weight: 700;
         }
-        .nav-link.active svg {
-            stroke: var(--magenta-principal);
+        .nav-link.active .emoji-icon {
+            transform: scale(1.2);
+        }
+        .emoji-icon {
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
         }
     </style>
 </head>
@@ -70,17 +71,17 @@
                 <a href="index.html" class="text-xl font-bold text-gris-oscuro font-poppins">Playbook de Lectoescritura</a>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
+                <button id="mobile-menu-button" class="md:hidden text-3xl">
+                    ☰
                 </button>
 
                 <!-- Desktop Navigation -->
                 <ul id="desktop-nav" class="hidden md:flex items-center space-x-4 text-sm">
-                    <li><a href="fundamentos.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><i data-lucide="brain-circuit"></i><span>Fundamentos Neuropsicológicos del Proceso</span></a></li>
-                    <li><a href="estrategias.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><i data-lucide="layers"></i><span>Métodos de Enseñanza</span></a></li>
-                    <li><a href="tecnologia.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><i data-lucide="plug-zap"></i><span>Herramientas Digitales</span></a></li>
-                    <li><a href="psicomotricidad.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><i data-lucide="pencil-ruler"></i><span>Grafomotricidad</span></a></li>
-                    <li><a href="a-lo-largo-de-la-vida.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><i data-lucide="book-open-check"></i><span>Lectoescritura a lo largo de la vida</span></a></li>
+                    <li><a href="fundamentos.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><span class="emoji-icon">🧠</span><span>Fundamentos Neuropsicológicos</span></a></li>
+                    <li><a href="estrategias.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><span class="emoji-icon">📚</span><span>Métodos de Enseñanza</span></a></li>
+                    <li><a href="tecnologia.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><span class="emoji-icon">💻</span><span>Herramientas Digitales</span></a></li>
+                    <li><a href="psicomotricidad.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><span class="emoji-icon">✏️</span><span>Grafomotricidad</span></a></li>
+                    <li><a href="a-lo-largo-de-la-vida.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><span class="emoji-icon">📖</span><span>Lectoescritura a lo largo de la vida</span></a></li>
                 </ul>
             </div>
             
@@ -88,7 +89,7 @@
             <div id="mobile-menu" class="hidden md:hidden mt-4">
                 <ul class="flex flex-col space-y-4">
                     <li><a href="index.html" class="nav-link active block py-2 text-gray-600">Inicio</a></li>
-                    <li><a href="fundamentos.html" class="nav-link block py-2 text-gray-600">Fundamentos Neuropsicológicos del Proceso</a></li>
+                    <li><a href="fundamentos.html" class="nav-link block py-2 text-gray-600">Fundamentos Neuropsicológicos</a></li>
                     <li><a href="estrategias.html" class="nav-link block py-2 text-gray-600">Métodos de Enseñanza</a></li>
                     <li><a href="tecnologia.html" class="nav-link block py-2 text-gray-600">Herramientas Digitales</a></li>
                     <li><a href="psicomotricidad.html" class="nav-link block py-2 text-gray-600">Grafomotricidad</a></li>
@@ -105,7 +106,7 @@
         <section id="page-1" class="min-h-screen flex flex-col justify-center items-center bg-gris-claro pt-20 pb-20">
             <div class="text-center container mx-auto px-6">
                 <div class="mb-12">
-                    <i data-lucide="compass" class="mx-auto text-magenta-principal" style="width: 64px; height: 64px;"></i>
+                    <span class="text-6xl">🧭</span>
                     <h1 class="text-4xl md:text-6xl font-extrabold text-gris-oscuro mt-4 font-poppins">Playbook de Lectoescritura para el Educador</h1>
                     <p class="text-lg md:text-xl text-gray-600 mt-4 max-w-3xl mx-auto">Un compendio de estrategias prácticas, fundamentadas y tecnológicamente aumentadas para transformar la enseñanza de la lectoescritura.</p>
                 </div>
@@ -114,27 +115,27 @@
                     <h3 class="text-2xl font-bold text-gris-oscuro font-poppins mb-8">Explora los Módulos</h3>
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
                         <a href="fundamentos.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
-                            <i data-lucide="brain-circuit" class="text-cian-secundario mb-2" style="width: 40px; height: 40px;"></i>
-                            <span class="font-semibold text-center">Fundamentos Neuropsicológicos del Proceso</span>
+                            <span class="text-4xl mb-2">🧠</span>
+                            <span class="font-semibold text-center">Fundamentos Neuropsicológicos</span>
                         </a>
                         <a href="estrategias.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
-                            <i data-lucide="layers" class="text-magenta-principal mb-2" style="width: 40px; height: 40px;"></i>
+                            <span class="text-4xl mb-2">📚</span>
                             <span class="font-semibold text-center">Métodos de Enseñanza</span>
                         </a>
                         <a href="tecnologia.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
-                            <i data-lucide="plug-zap" class="text-cian-secundario mb-2" style="width: 40px; height: 40px;"></i>
+                            <span class="text-4xl mb-2">💻</span>
                             <span class="font-semibold text-center">Herramientas Digitales</span>
                         </a>
                         <a href="psicomotricidad.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
-                            <i data-lucide="pencil-ruler" class="text-magenta-principal mb-2" style="width: 40px; height: 40px;"></i>
+                            <span class="text-4xl mb-2">✏️</span>
                             <span class="font-semibold text-center">Grafomotricidad</span>
                         </a>
                         <a href="a-lo-largo-de-la-vida.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
-                            <i data-lucide="book-open-check" class="text-cian-secundario mb-2" style="width: 40px; height: 40px;"></i>
+                            <span class="text-4xl mb-2">📖</span>
                             <span class="font-semibold text-center">Lectoescritura a lo largo de la vida</span>
                         </a>
                         <a href="bibliografia.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
-                            <i data-lucide="library" class="text-magenta-principal mb-2" style="width: 40px; height: 40px;"></i>
+                            <span class="text-4xl mb-2">🗂️</span>
                             <span class="font-semibold text-center">Recursos</span>
                         </a>
                     </div>
@@ -152,9 +153,6 @@
     </footer>
 
     <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
         // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
