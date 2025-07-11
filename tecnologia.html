@@ -262,44 +262,65 @@
     </main>
 
     <footer class="bg-gray-100 border-t border-gray-200">
+    <!-- Sección Superior: Captura de Leads -->
     <div class="bg-white py-12">
         <div class="container mx-auto px-6 text-center">
             <h3 class="text-2xl md:text-3xl font-bold text-gris-oscuro">¿Quieres llevar estas estrategias a tu aula?</h3>
-            <p class="text-gray-600 mt-2 mb-6 max-w-2xl mx-auto">Recibe una consulta inicial gratuita sobre EdTech o suscríbete para descargar recursos exclusivos y actualizaciones del playbook.</p>
+            <p class="text-gray-600 mt-2 mb-6 max-w-2xl mx-auto">Envíame un mensaje para una consulta inicial gratuita sobre EdTech o para recibir recursos exclusivos y actualizaciones del playbook.</p>
             
-            <form action="https://formspree.io/f/xanjrakl" method="POST" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
-                <label for="email-input" class="sr-only">Correo electrónico</label>
-                <input 
-                    type="email" 
-                    id="email-input" 
-                    name="email"
-                    required
-                    placeholder="Tu correo electrónico profesional" 
-                    class="flex-grow w-full px-4 py-3 text-gray-700 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cian-secundario"
-                >
+            <!-- Formulario de Captura Funcional -->
+            <form action="https://formspree.io/f/xanjrakl" method="POST" class="max-w-xl mx-auto flex flex-col gap-4">
+                
+                <!-- Campo de Correo -->
+                <div>
+                    <label for="email-input" class="sr-only">Tu correo electrónico</label>
+                    <input 
+                        type="email" 
+                        id="email-input" 
+                        name="email"
+                        required
+                        placeholder="Tu correo electrónico profesional" 
+                        class="w-full px-4 py-3 text-gray-700 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                    >
+                </div>
+                
+                <!-- Campo de Mensaje -->
+                <div>
+                    <label for="message-input" class="sr-only">Tu mensaje</label>
+                    <textarea 
+                        id="message-input"
+                        name="message"
+                        rows="4"
+                        placeholder="Escribe tu mensaje o consulta aquí..."
+                        class="w-full px-4 py-3 text-gray-700 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                    ></textarea>
+                </div>
+
+                <!-- Botón de Envío -->
                 <button 
                     type="submit" 
-                    class="bg-magenta-principal text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-opacity-90 transition-all duration-300 transform hover:-translate-y-1"
+                    style="background-color: #E4007C;"
+                    class="text-white font-bold py-3 px-6 rounded-md shadow-lg hover:opacity-90 transition-all duration-300 transform hover:-translate-y-1"
                 >
-                    ¡Comenzar Ahora!
+                    Enviar Mensaje
                 </button>
             </form>
         </div>
     </div>
 
+    <!-- Sección Inferior: Información y Copyright -->
     <div class="bg-gris-oscuro text-gray-400 py-6">
         <div class="container mx-auto px-6 text-center">
             <p class="text-sm">Elaborado por Jesús Ángel Álvarez González</p>
             <p class="text-xs mt-3">
                 &copy; 2025 Playbook de Lectoescritura. Todos los derechos reservados. | 
-                <a href="https://www.linkedin.com/in/angelalvarezg97/" target="_blank" rel="noopener noreferrer" class="font-semibold text-cian-secundario hover:underline">
+                <a href="https://www.linkedin.com/in/angelalvarezg97/" target="_blank" rel="noopener noreferrer" class="font-semibold text-cyan-400 hover:underline">
                     Conecta en LinkedIn
                 </a>
             </p>
         </div>
     </div>
 </footer>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize Lucide Icons
