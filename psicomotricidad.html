@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Interactivo: La Base del Trazo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos personalizados y configuración de Tailwind */
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f9fafb;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        /* Paleta de colores */
+        .strategy-header--mixto {
+            background-color: #FFC107; /* Amarillo Vibrante */
+            color: #424242; /* Gris oscuro para contraste */
+        }
+        .tab-link.active {
+            background-color: #FFC107;
+            color: #424242;
+            border-right: 4px solid #FFA000;
+        }
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .tab-pane.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Estilos para la Línea de Tiempo */
+        .timeline-container {
+            position: relative;
+            padding: 2rem 0;
+        }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 18px;
+            height: 100%;
+            width: 4px;
+            background: #e2e8f0; /* gray-200 */
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 3rem;
+        }
+        .timeline-node {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #FFC107;
+            color: #424242;
+            font-weight: 700;
+            border: 4px solid white;
+            box-shadow: 0 0 0 3px #FFC107;
+        }
+        .info-card, .activity-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .info-card:hover, .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+<div class="strategy-detail-page-interactive flex flex-col md:flex-row h-screen bg-white">
+
+  <!-- ======================================================= -->
+  <!-- COLUMNA IZQUIERDA: MENÚ DE NAVEGACIÓN POR PESTAÑAS     -->
+  <!-- ======================================================= -->
+  <nav class="vertical-tabs-nav w-full md:w-1/4 lg:w-1/5 bg-gray-50 border-r border-gray-200 flex flex-col" role="tablist" aria-orientation="vertical">
+    <div class="strategy-header strategy-header--mixto p-6 text-center">
+      <h1 class="header__title text-2xl font-bold">La Base del Trazo</h1>
+      <p class="text-sm mt-2">Módulo de Grafomotricidad</p>
+    </div>
+    <div class="flex-grow p-4">
+        <button class="tab-link w-full text-left p-4 rounded-lg font-semibold flex items-center gap-3 transition-all duration-300 active" role="tab" aria-selected="true" aria-controls="tab-proposito">
+          <span class="tab-icon text-xl">🎯</span> Propósito e Importancia
+        </button>
+        <button class="tab-link w-full text-left p-4 rounded-lg font-semibold flex items-center gap-3 transition-all duration-300" role="tab" aria-selected="false" aria-controls="tab-actividades">
+          <span class="tab-icon text-xl">🛠️</span> Banco de Actividades
+        </button>
+        <button class="tab-link w-full text-left p-4 rounded-lg font-semibold flex items-center gap-3 transition-all duration-300" role="tab" aria-selected="false" aria-controls="tab-claves">
+          <span class="tab-icon text-xl">🔑</span> Claves de Implementación
+        </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================= -->
+  <!-- COLUMNA DERECHA: ÁREA DE CONTENIDO DINÁMICO DE LAS PESTAÑAS -->
+  <!-- ============================================================= -->
+  <div class="tab-content-area w-full md:w-3/4 lg:w-4/5 p-6 md:p-10 lg:p-12 overflow-y-auto">
+
+    <!-- Contenido Pestaña 1: Propósito e Importancia (Activa por defecto) -->
+    <div id="tab-proposito" class="tab-pane active" role="tabpanel">
+      <h4 class="text-3xl font-bold text-gray-800 mb-4">Propósito e Importancia de las Actividades Grafomotrices</h4>
+      <p class="text-lg text-gray-600 mb-8">Las actividades grafomotrices son ejercicios fundamentales para el desarrollo de la motricidad fina. Entrenan los movimientos básicos de la lectoescritura, fortaleciendo los músculos finos y la coordinación necesaria para escribir con fluidez y precisión.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="info-card bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+            <div class="card__icon text-4xl mb-3 text-yellow-500">💪</div>
+            <h6 class="text-xl font-semibold mb-2">Desarrollo de Motricidad Fina</h6>
+            <p class="text-gray-600">Fortalece los músculos de la mano, muñeca y dedos, esenciales para acciones coordinadas que involucran la vista y el tacto.</p>
+          </div>
+          <div class="info-card bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+            <div class="card__icon text-4xl mb-3 text-yellow-500">✏️</div>
+            <h6 class="text-xl font-semibold mb-2">Preparación para la Escritura</h6>
+            <p class="text-gray-600">Aporta la correcta direccionalidad, precisión de movimientos, prensión del lápiz y coordinación óculo-manual.</p>
+          </div>
+          <div class="info-card bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+            <div class="card__icon text-4xl mb-3 text-yellow-500">🤏</div>
+            <h6 class="text-xl font-semibold mb-2">Fortalecimiento de Habilidades</h6>
+            <p class="text-gray-600">Mejora la pinza digital, la memoria, la atención y la organización, estimulando el pensamiento y la creatividad.</p>
+          </div>
+          <div class="info-card bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+            <div class="card__icon text-4xl mb-3 text-yellow-500">🛡️</div>
+            <h6 class="text-xl font-semibold mb-2">Prevención de Dificultades</h6>
+            <p class="text-gray-600">Un adecuado trabajo grafomotriz puede prevenir futuros problemas de lectoescritura, asegurando mejores resultados en la caligrafía.</p>
+          </div>
+      </div>
+    </div>
+
+    <!-- Contenido Pestaña 2: Banco de Actividades -->
+    <div id="tab-actividades" class="tab-pane" role="tabpanel">
+      <h4 class="text-3xl font-bold text-gray-800 mb-4">Banco de Actividades Grafomotrices</h4>
+      <p class="text-lg text-gray-600 mb-8">El empleo de actividades físicas, lúdicas y grafoplásticas es fundamental para desarrollar habilidades motoras finas. Aquí tienes algunos ejemplos:</p>
+      
+      <h5 class="text-2xl font-semibold text-gray-700 mt-8 mb-4">Actividades de Manipulación Fina</h5>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
+          <div class="activity-card bg-white p-4 rounded-xl shadow-lg"><div class="activity-icon text-4xl mb-2">📜</div><span class="font-semibold">Rasgado y Trozado</span></div>
+          <div class="activity-card bg-white p-4 rounded-xl shadow-lg"><div class="activity-icon text-4xl mb-2">🕳️</div><span class="font-semibold">Punzado</span></div>
+          <div class="activity-card bg-white p-4 rounded-xl shadow-lg"><div class="activity-icon text-4xl mb-2">🔘</div><span class="font-semibold">Abotonar</span></div>
+          <div class="activity-card bg-white p-4 rounded-xl shadow-lg"><div class="activity-icon text-4xl mb-2">🤐</div><span class="font-semibold">Subir Cierres</span></div>
+          <div class="activity-card bg-white p-4 rounded-xl shadow-lg"><div class="activity-icon text-4xl mb-2">🏺</div><span class="font-semibold">Modelado</span></div>
+      </div>
+
+      <h5 class="text-2xl font-semibold text-gray-700 mt-8 mb-4">Actividades de Trazo y Dibujo</h5>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
+          <div class="activity-card bg-white p-4 rounded-xl shadow-lg"><div class="activity-icon text-4xl mb-2">🎨</div><span class="font-semibold">Pintura y Coloreado</span></div>
+          <div class="activity-card bg-white p-4 rounded-xl shadow-lg"><div class="activity-icon text-4xl mb-2">✂️</div><span class="font-semibold">Recorte</span></div>
+          <div class="activity-card bg-white p-4 rounded-xl shadow-lg"><div class="activity-icon text-4xl mb-2">〰️</div><span class="font-semibold">Trazos Libres</span></div>
+          <div class="activity-card bg-white p-4 rounded-xl shadow-lg"><div class="activity-icon text-4xl mb-2">🧶</div><span class="font-semibold">Juego con Lanas</span></div>
+          <div class="activity-card bg-white p-4 rounded-xl shadow-lg"><div class="activity-icon text-4xl mb-2">👆</div><span class="font-semibold">Repasar con el Dedo</span></div>
+      </div>
+    </div>
+
+    <!-- Contenido Pestaña 3: Claves de Implementación -->
+    <div id="tab-claves" class="tab-pane" role="tabpanel">
+        <h4 class="text-3xl font-bold text-gray-800 mb-8">Claves para una Implementación Exitosa</h4>
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-node">1</div>
+            <div class="timeline-card bg-white p-6 rounded-xl shadow-lg">
+                <h5 class="text-xl font-semibold mb-2">Estimulación Prioritaria</h5>
+                <p class="text-gray-600">Es fundamental estimular la motricidad fina en el nivel inicial para facilitar la autonomía del niño en sus actividades cotidianas.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node">2</div>
+            <div class="timeline-card bg-white p-6 rounded-xl shadow-lg">
+                <h5 class="text-xl font-semibold mb-2">Adaptación a la Edad</h5>
+                <p class="text-gray-600">La planificación debe ajustarse a la edad y necesidades del niño, avanzando de tareas simples a otras más complejas.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node">3</div>
+            <div class="timeline-card bg-white p-6 rounded-xl shadow-lg">
+                <h5 class="text-xl font-semibold mb-2">Materiales y Experiencias</h5>
+                <p class="text-gray-600">Es crucial complementar las actividades con materiales y experiencias vividas por los niños para darles contexto.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node">4</div>
+            <div class="timeline-card bg-white p-6 rounded-xl shadow-lg">
+                <h5 class="text-xl font-semibold mb-2">Rol del Docente y la Familia</h5>
+                <p class="text-gray-600">Tanto docentes como familias tienen la responsabilidad de aplicar y fomentar estas actividades desde la escuela y el hogar.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node">5</div>
+            <div class="timeline-card bg-white p-6 rounded-xl shadow-lg">
+                <h5 class="text-xl font-semibold mb-2">Evitar la Monotonía</h5>
+                <p class="text-gray-600">Es importante innovar constantemente en las estrategias para evitar el desinterés que puede generar la repetición.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node">6</div>
+            <div class="timeline-card bg-white p-6 rounded-xl shadow-lg">
+                <h5 class="text-xl font-semibold mb-2">Más Allá de la Copia</h5>
+                <p class="text-gray-600">La mera repetición de rasgos en un cuaderno no desarrolla habilidades de preescritura; la actividad debe ser significativa.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const tabs = document.querySelectorAll('.tab-link');
+        const panes = document.querySelectorAll('.tab-pane');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Desactivar todas las pestañas y paneles
+                tabs.forEach(t => t.classList.remove('active'));
+                panes.forEach(p => p.classList.remove('active'));
+
+                // Activar la pestaña y el panel seleccionados
+                tab.classList.add('active');
+                const targetPaneId = tab.getAttribute('aria-controls');
+                const targetPane = document.getElementById(targetPaneId);
+                if (targetPane) {
+                    targetPane.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
