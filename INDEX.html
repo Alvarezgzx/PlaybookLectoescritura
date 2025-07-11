@@ -44,7 +44,9 @@
                  <li><a href="bibliografia.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><span class="emoji-icon">🗂️</span><span>Recursos</span></a></li>
             </ul>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden mt-4">
+           
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
             <ul class="flex flex-col space-y-4">
                 <li><a href="index.html" class="nav-link block py-2 text-gray-600">Inicio</a></li>
                 <li><a href="fundamentos.html" class="nav-link block py-2 text-gray-600">Fundamentos Neuropsicológicos</a></li>
@@ -55,14 +57,54 @@
             </ul>
         </div>
     </nav>
-</header>    
-    <footer class="bg-gray-100 border-t border-gray-200">
+</header>
+    <main>
+        <section id="page-1" class="min-h-screen flex flex-col justify-center items-center bg-gris-claro pt-20 pb-20">
+            <div class="text-center container mx-auto px-6">
+                <div class="mb-12">
+                    <span class="text-6xl">🧭</span>
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-gris-oscuro mt-4 font-poppins">Playbook de Lectoescritura para el Educador</h1>
+                    <p class="text-lg md:text-xl text-gray-600 mt-4 max-w-3xl mx-auto">Un compendio de estrategias prácticas, fundamentadas y tecnológicamente aumentadas para transformar la enseñanza de la lectoescritura.</p>
+                </div>
+                
+                <div class="mt-12">
+                    <h3 class="text-2xl font-bold text-gris-oscuro font-poppins mb-8">Explora los Módulos</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                        <a href="fundamentos.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
+                            <span class="text-4xl mb-2">🧠</span>
+                            <span class="font-semibold text-center">Fundamentos Neuropsicológicos</span>
+                        </a>
+                        <a href="estrategias.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
+                            <span class="text-4xl mb-2">📚</span>
+                            <span class="font-semibold text-center">Métodos de Enseñanza</span>
+                        </a>
+                        <a href="tecnologia.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
+                            <span class="text-4xl mb-2">💻</span>
+                            <span class="font-semibold text-center">Herramientas Digitales</span>
+                        </a>
+                        <a href="psicomotricidad.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
+                            <span class="text-4xl mb-2">✏️</span>
+                            <span class="font-semibold text-center">Grafomotricidad</span>
+                        </a>
+                        <a href="bibliografia.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
+                            <span class="text-4xl mb-2">🗂️</span>
+                            <span class="font-semibold text-center">Recursos</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+<footer class="bg-gray-100 border-t border-gray-200">
+    <!-- Sección Superior: Captura de Leads -->
     <div class="bg-white py-12">
         <div class="container mx-auto px-6 text-center">
             <h3 class="text-2xl md:text-3xl font-bold text-gris-oscuro">¿Quieres llevar estas estrategias a tu aula?</h3>
             <p class="text-gray-600 mt-2 mb-6 max-w-2xl mx-auto">Recibe una consulta inicial gratuita sobre EdTech o suscríbete para descargar recursos exclusivos y actualizaciones del playbook.</p>
             
-            <form action="https://formspree.io/f/xanjrakl" method="POST" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+            <!-- Formulario de Captura Funcional -->
+            <form action="https://formspree.io/f/TU_ENDPOINT_DE_FORMSPREE" method="POST" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
                 <label for="email-input" class="sr-only">Correo electrónico</label>
                 <input 
                     type="email" 
@@ -70,11 +112,12 @@
                     name="email"
                     required
                     placeholder="Tu correo electrónico profesional" 
-                    class="flex-grow w-full px-4 py-3 text-gray-700 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cian-secundario"
+                    class="flex-grow w-full px-4 py-3 text-gray-700 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 >
                 <button 
                     type="submit" 
-                    class="bg-magenta-principal text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-opacity-90 transition-all duration-300 transform hover:-translate-y-1"
+                    style="background-color: #E4007C;"
+                    class="text-white font-bold py-3 px-6 rounded-md shadow-lg hover:opacity-90 transition-all duration-300 transform hover:-translate-y-1"
                 >
                     ¡Comenzar Ahora!
                 </button>
@@ -82,12 +125,13 @@
         </div>
     </div>
 
+    <!-- Sección Inferior: Información y Copyright -->
     <div class="bg-gris-oscuro text-gray-400 py-6">
         <div class="container mx-auto px-6 text-center">
             <p class="text-sm">Elaborado por Jesús Ángel Álvarez González</p>
             <p class="text-xs mt-3">
                 &copy; 2025 Playbook de Lectoescritura. Todos los derechos reservados. | 
-                <a href="https://www.linkedin.com/in/angelalvarezg97/" target="_blank" rel="noopener noreferrer" class="font-semibold text-cian-secundario hover:underline">
+                <a href="https://www.linkedin.com/in/angelalvarezg97/" target="_blank" rel="noopener noreferrer" class="font-semibold text-cyan-400 hover:underline">
                     Conecta en LinkedIn
                 </a>
             </p>
