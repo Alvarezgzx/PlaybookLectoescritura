@@ -32,80 +32,68 @@
 
     <!-- Header & Navigation -->
     <header id="main-header" class="bg-white/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-3">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="text-xl font-bold text-gris-oscuro font-poppins">Playbook de Lectoescritura</a>
-                <button id="mobile-menu-button" class="md:hidden text-3xl">☰</button>
-
-                <!-- Desktop Navigation -->
-                <ul id="desktop-nav" class="hidden md:flex items-center space-x-6 text-sm">
-                    <li><a href="fundamentos.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><span class="emoji-icon">🧠</span><span>Fundamentos Neuropsicológicos</span></a></li>
-                    <li><a href="estrategias.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><span class="emoji-icon">📚</span><span>Métodos de Enseñanza</span></a></li>
-                    <li><a href="tecnologia.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><span class="emoji-icon">💻</span><span>Herramientas Digitales</span></a></li>
-                    <li><a href="psicomotricidad.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal transition-colors duration-300"><span class="emoji-icon">✏️</span><span>Grafomotricidad</span></a></li>
-                </ul>
-            </div>
-            
-            <!-- Mobile Navigation Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4">
-                <ul class="flex flex-col space-y-4">
-                    <li><a href="index.html" class="nav-link active block py-2 text-gray-600">Inicio</a></li>
-                    <li><a href="fundamentos.html" class="nav-link block py-2 text-gray-600">Fundamentos Neuropsicológicos</a></li>
-                    <li><a href="estrategias.html" class="nav-link block py-2 text-gray-600">Métodos de Enseñanza</a></li>
-                    <li><a href="tecnologia.html" class="nav-link block py-2 text-gray-600">Herramientas Digitales</a></li>
-                    <li><a href="psicomotricidad.html" class="nav-link block py-2 text-gray-600">Grafomotricidad</a></li>
-                    <li><a href="conclusion.html" class="nav-link block py-2 text-gray-600">Conclusión</a></li>
-                    <li><a href="bibliografia.html" class="nav-link block py-2 text-gray-600">Bibliografía</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section id="page-1" class="min-h-screen flex flex-col justify-center items-center bg-gris-claro pt-20 pb-20">
-            <div class="text-center container mx-auto px-6">
-                <div class="mb-12">
-                    <span class="text-6xl">🧭</span>
-                    <h1 class="text-4xl md:text-6xl font-extrabold text-gris-oscuro mt-4 font-poppins">Playbook de Lectoescritura para el Educador</h1>
-                    <p class="text-lg md:text-xl text-gray-600 mt-4 max-w-3xl mx-auto">Un compendio de estrategias prácticas, fundamentadas y tecnológicamente aumentadas para transformar la enseñanza de la lectoescritura.</p>
-                </div>
-                
-                <div class="mt-12">
-                    <h3 class="text-2xl font-bold text-gris-oscuro font-poppins mb-8">Explora los Módulos</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                        <a href="fundamentos.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
-                            <span class="text-4xl mb-2">🧠</span>
-                            <span class="font-semibold text-center">Fundamentos Neuropsicológicos</span>
-                        </a>
-                        <a href="estrategias.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
-                            <span class="text-4xl mb-2">📚</span>
-                            <span class="font-semibold text-center">Métodos de Enseñanza</span>
-                        </a>
-                        <a href="tecnologia.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
-                            <span class="text-4xl mb-2">💻</span>
-                            <span class="font-semibold text-center">Herramientas Digitales</span>
-                        </a>
-                        <a href="psicomotricidad.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
-                            <span class="text-4xl mb-2">✏️</span>
-                            <span class="font-semibold text-center">Grafomotricidad</span>
-                        </a>
-                        <a href="bibliografia.html" class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center">
-                            <span class="text-4xl mb-2">🗂️</span>
-                            <span class="font-semibold text-center">Recursos</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer class="bg-gris-oscuro text-white py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-sm font-semibold">Elaborado por Jesús Ángel Álvarez González</p>
-            <p class="text-sm mt-2">&copy; 2025 Playbook de Lectoescritura. Todos los derechos reservados.</p>
-            <p class="text-xs mt-2">Diseñado con <span class="text-magenta-principal">&hearts;</span> para educadores innovadores.</p>
+    <nav class="container mx-auto px-6 py-3">
+        <div class="flex items-center justify-between">
+            <a href="index.html" class="text-xl font-bold text-gris-oscuro font-poppins">Playbook de Lectoescritura</a>
+            <button id="mobile-menu-button" class="md:hidden text-3xl">☰</button>
+            <ul id="desktop-nav" class="hidden md:flex items-center space-x-6 text-sm">
+                <li><a href="fundamentos.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><span class="emoji-icon">🧠</span><span>Fundamentos</span></a></li>
+                <li><a href="estrategias.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><span class="emoji-icon">📚</span><span>Métodos</span></a></li>
+                <li><a href="tecnologia.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><span class="emoji-icon">💻</span><span>Tecnología</span></a></li>
+                <li><a href="psicomotricidad.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><span class="emoji-icon">✏️</span><span>Grafomotricidad</span></a></li>
+                 <li><a href="bibliografia.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><span class="emoji-icon">🗂️</span><span>Recursos</span></a></li>
+            </ul>
         </div>
-    </footer>
+        <div id="mobile-menu" class="hidden md:hidden mt-4">
+            <ul class="flex flex-col space-y-4">
+                <li><a href="index.html" class="nav-link block py-2 text-gray-600">Inicio</a></li>
+                <li><a href="fundamentos.html" class="nav-link block py-2 text-gray-600">Fundamentos Neuropsicológicos</a></li>
+                <li><a href="estrategias.html" class="nav-link block py-2 text-gray-600">Métodos de Enseñanza</a></li>
+                <li><a href="tecnologia.html" class="nav-link block py-2 text-gray-600">Herramientas Digitales</a></li>
+                <li><a href="psicomotricidad.html" class="nav-link block py-2 text-gray-600">Grafomotricidad</a></li>
+                <li><a href="bibliografia.html" class="nav-link block py-2 text-gray-600">Bibliografía</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>    
+    <footer class="bg-gray-100 border-t border-gray-200">
+    <div class="bg-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl md:text-3xl font-bold text-gris-oscuro">¿Quieres llevar estas estrategias a tu aula?</h3>
+            <p class="text-gray-600 mt-2 mb-6 max-w-2xl mx-auto">Recibe una consulta inicial gratuita sobre EdTech o suscríbete para descargar recursos exclusivos y actualizaciones del playbook.</p>
+            
+            <form action="https://formspree.io/f/xanjrakl" method="POST" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+                <label for="email-input" class="sr-only">Correo electrónico</label>
+                <input 
+                    type="email" 
+                    id="email-input" 
+                    name="email"
+                    required
+                    placeholder="Tu correo electrónico profesional" 
+                    class="flex-grow w-full px-4 py-3 text-gray-700 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cian-secundario"
+                >
+                <button 
+                    type="submit" 
+                    class="bg-magenta-principal text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-opacity-90 transition-all duration-300 transform hover:-translate-y-1"
+                >
+                    ¡Comenzar Ahora!
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="bg-gris-oscuro text-gray-400 py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-sm">Elaborado por Jesús Ángel Álvarez González</p>
+            <p class="text-xs mt-3">
+                &copy; 2025 Playbook de Lectoescritura. Todos los derechos reservados. | 
+                <a href="https://www.linkedin.com/in/angelalvarezg97/" target="_blank" rel="noopener noreferrer" class="font-semibold text-cian-secundario hover:underline">
+                    Conecta en LinkedIn
+                </a>
+            </p>
+        </div>
+    </div>
+</footer>
 
     <script>
         const mobileMenuButton = document.getElementById('mobile-menu-button');
