@@ -83,43 +83,30 @@
 
     <!-- Header & Navigation -->
     <header id="main-header" class="bg-white/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-3">
-            <div class="flex items-center justify-between">
-                <!-- MODIFICADO: El enlace ahora apunta a index.html y el título es correcto -->
-                <a href="index.html" class="text-xl font-bold text-gris-oscuro font-poppins">Playbook de Lectoescritura</a>
-                
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-
-                <!-- Desktop Navigation -->
-                <ul id="desktop-nav" class="hidden md:flex items-center space-x-6 text-sm">
-                    <li><a href="#ymagina" class="nav-link text-gray-600 hover:text-magenta-principal transition-colors duration-300">Ymagina</a></li>
-                    <li><a href="#dic-dic" class="nav-link text-gray-600 hover:text-magenta-principal transition-colors duration-300">DIC-DIC</a></li>
-                    <li><a href="#glifing" class="nav-link text-gray-600 hover:text-magenta-principal transition-colors duration-300">Glifing</a></li>
-                    <li><a href="#storybird" class="nav-link text-gray-600 hover:text-magenta-principal transition-colors duration-300">Storybird</a></li>
-                    <li><a href="#conclusion" class="nav-link text-gray-600 hover:text-magenta-principal transition-colors duration-300">Más</a></li>
-                </ul>
-            </div>
-            
-            <!-- Mobile Navigation Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4">
-                <ul class="flex flex-col space-y-4">
-                    <li><a href="#hero" class="nav-link block py-2 text-gray-600">Inicio</a></li>
-                    <li><a href="#ymagina" class="nav-link block py-2 text-gray-600">Ymagina</a></li>
-                    <li><a href="#dic-dic" class="nav-link block py-2 text-gray-600">DIC-DIC</a></li>
-                    <li><a href="#glifing" class="nav-link block py-2 text-gray-600">Glifing</a></li>
-                    <li><a href="#storybird" class="nav-link block py-2 text-gray-600">Storybird</a></li>
-                    <li><a href="#lector-inmersivo" class="nav-link block py-2 text-gray-600">Lector Inmersivo</a></li>
-                    <li><a href="#colorin-colorado" class="nav-link block py-2 text-gray-600">Colorín Colorado</a></li>
-                    <li><a href="#pictoescritura" class="nav-link block py-2 text-gray-600">Pictoescritura</a></li>
-                    <li><a href="#conclusion" class="nav-link block py-2 text-gray-600">Conclusión</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
+    <nav class="container mx-auto px-6 py-3">
+        <div class="flex items-center justify-between">
+            <a href="index.html" class="text-xl font-bold text-gris-oscuro font-poppins">Playbook de Lectoescritura</a>
+            <button id="mobile-menu-button" class="md:hidden text-3xl">☰</button>
+            <ul id="desktop-nav" class="hidden md:flex items-center space-x-6 text-sm">
+                <li><a href="fundamentos.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><span class="emoji-icon">🧠</span><span>Fundamentos</span></a></li>
+                <li><a href="estrategias.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><span class="emoji-icon">📚</span><span>Métodos</span></a></li>
+                <li><a href="tecnologia.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><span class="emoji-icon">💻</span><span>Tecnología</span></a></li>
+                <li><a href="psicomotricidad.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><span class="emoji-icon">✏️</span><span>Grafomotricidad</span></a></li>
+                 <li><a href="bibliografia.html" class="nav-link flex items-center space-x-2 text-gray-600 hover:text-magenta-principal"><span class="emoji-icon">🗂️</span><span>Recursos</span></a></li>
+            </ul>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-4">
+            <ul class="flex flex-col space-y-4">
+                <li><a href="index.html" class="nav-link block py-2 text-gray-600">Inicio</a></li>
+                <li><a href="fundamentos.html" class="nav-link block py-2 text-gray-600">Fundamentos Neuropsicológicos</a></li>
+                <li><a href="estrategias.html" class="nav-link block py-2 text-gray-600">Métodos de Enseñanza</a></li>
+                <li><a href="tecnologia.html" class="nav-link block py-2 text-gray-600">Herramientas Digitales</a></li>
+                <li><a href="psicomotricidad.html" class="nav-link block py-2 text-gray-600">Grafomotricidad</a></li>
+                <li><a href="bibliografia.html" class="nav-link block py-2 text-gray-600">Bibliografía</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
     <main>
         <!-- Acto 1: Sección Hero -->
         <section id="hero" class="fullscreen-scroll-section text-center bg-gray-900 text-white relative overflow-hidden mt-[-80px]">
@@ -274,18 +261,44 @@
         </section>
     </main>
 
-    <footer class="bg-gris-oscuro text-white py-8">
+    <footer class="bg-gray-100 border-t border-gray-200">
+    <div class="bg-white py-12">
         <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center space-x-6 mb-4">
-                <a href="#hero" class="hover:text-magenta-principal transition-colors">Inicio</a>
-                <a href="#ymagina" class="hover:text-magenta-principal transition-colors">Recursos</a>
-                <a href="#conclusion" class="hover:text-magenta-principal transition-colors">Conclusión</a>
-            </div>
-            <p class="text-sm font-semibold">Elaborado por Jesús Ángel Álvarez González</p>
-            <p class="text-sm mt-2">&copy; 2025 Playbook de Lectoescritura. Todos los derechos reservados.</p>
-            <p class="text-xs mt-2">Diseñado con <span class="text-magenta-principal">&hearts;</span> para educadores innovadores.</p>
+            <h3 class="text-2xl md:text-3xl font-bold text-gris-oscuro">¿Quieres llevar estas estrategias a tu aula?</h3>
+            <p class="text-gray-600 mt-2 mb-6 max-w-2xl mx-auto">Recibe una consulta inicial gratuita sobre EdTech o suscríbete para descargar recursos exclusivos y actualizaciones del playbook.</p>
+            
+            <form action="https://formspree.io/f/xanjrakl" method="POST" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+                <label for="email-input" class="sr-only">Correo electrónico</label>
+                <input 
+                    type="email" 
+                    id="email-input" 
+                    name="email"
+                    required
+                    placeholder="Tu correo electrónico profesional" 
+                    class="flex-grow w-full px-4 py-3 text-gray-700 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cian-secundario"
+                >
+                <button 
+                    type="submit" 
+                    class="bg-magenta-principal text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-opacity-90 transition-all duration-300 transform hover:-translate-y-1"
+                >
+                    ¡Comenzar Ahora!
+                </button>
+            </form>
         </div>
-    </footer>
+    </div>
+
+    <div class="bg-gris-oscuro text-gray-400 py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-sm">Elaborado por Jesús Ángel Álvarez González</p>
+            <p class="text-xs mt-3">
+                &copy; 2025 Playbook de Lectoescritura. Todos los derechos reservados. | 
+                <a href="https://www.linkedin.com/in/angelalvarezg97/" target="_blank" rel="noopener noreferrer" class="font-semibold text-cian-secundario hover:underline">
+                    Conecta en LinkedIn
+                </a>
+            </p>
+        </div>
+    </div>
+</footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
