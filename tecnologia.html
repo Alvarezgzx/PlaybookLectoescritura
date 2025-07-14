@@ -77,7 +77,6 @@
         /* Contenido dentro de las pestañas */
         .tab-pane h4 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; }
         .tab-pane .panel-description { font-size: 1.1rem; color: #4b5563; margin-bottom: 2rem; }
-        .tab-pane h5 { font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; border-bottom: 2px solid var(--gris-claro); padding-bottom: 0.5rem; }
         
         .info-grid {
             display: grid;
@@ -111,7 +110,7 @@
 
         .cta-button {
             display: inline-block;
-            margin-top: 2rem;
+            margin-top: 1rem;
             padding: 0.75rem 1.5rem;
             border-radius: 0.5rem;
             font-weight: 700;
@@ -139,9 +138,9 @@
             background-color: #f59e0b; /* Ámbar */
         }
 
-        /* NUEVO: Estilos para el Pop-up (Tooltip) */
+        /* Estilos para el Pop-up (Tooltip) */
         #tooltip {
-            position: absolute;
+            position: fixed;
             background-color: var(--gris-oscuro);
             color: var(--blanco);
             padding: 0.5rem 1rem;
@@ -227,9 +226,9 @@
                         <div class="info-card">
                             <h6>Detalles Clave</h6>
                             <div class="feature-item"><span class="icon">👥</span><strong>Alcance:</strong> Educación Infantil y Primaria</div>
+                            <a href="https://ymaginaproject.com" target="_blank" class="cta-button bg-cyan-600 w-full text-center">Visitar el Sitio Web</a>
                         </div>
                     </div>
-                    <a href="https://ymaginaproject.com" target="_blank" class="cta-button bg-cyan-600">Visitar el Sitio Web</a>
                 </div>
 
                 <!-- Pestaña DIC-DIC -->
@@ -247,9 +246,9 @@
                             <h6>Detalles Clave</h6>
                             <div class="feature-item"><span class="icon">👥</span><strong>Alcance:</strong> Niños de 3 a 12 años</div>
                             <div class="feature-item"><i data-lucide="apple" class="w-5 h-5"></i><strong>Plataforma:</strong> Exclusivo para iOS</div>
+                             <a href="https://apps.apple.com/es/app/dic-dic-dictado-multiling%C3%BCe-para-la-pr%C3%A1ctica-de-la/id643656920" target="_blank" class="cta-button bg-pink-600 w-full text-center">Descargar en la App Store</a>
                         </div>
                     </div>
-                    <a href="https://apps.apple.com/es/app/dic-dic-dictado-multiling%C3%BCe-para-la-pr%C3%A1ctica-de-la/id643656920" target="_blank" class="cta-button bg-pink-600">Descargar en la App Store</a>
                 </div>
 
                 <!-- Pestaña Glifing -->
@@ -266,12 +265,12 @@
                         <div class="info-card">
                             <h6>Detalles Clave</h6>
                             <div class="feature-item"><span class="icon">👥</span><strong>Alcance:</strong> Más de 200,000 niños</div>
+                            <a href="https://glifing.com" target="_blank" class="cta-button bg-yellow-500 w-full text-center">Visitar el Sitio Web</a>
                         </div>
                     </div>
-                    <a href="https://glifing.com" target="_blank" class="cta-button bg-yellow-500">Visitar el Sitio Web</a>
                 </div>
 
-                <!-- Pestaña Storybird -->
+                <!-- Add other tabs similarly -->
                 <div id="tab-storybird" class="tab-pane" role="tabpanel">
                     <h4 class="text-cyan-700">Storybird</h4>
                     <p class="panel-description">Una plataforma para crear historias y cuentos a partir de imágenes, fomentando la construcción colaborativa y la publicación en una red social de cuentos ilustrados.</p>
@@ -285,12 +284,11 @@
                         <div class="info-card">
                             <h6>Detalles Clave</h6>
                             <div class="feature-item"><span class="icon">👥</span><strong>Alcance:</strong> Estudiantes</div>
+                            <a href="https://storybird.com" target="_blank" class="cta-button bg-cyan-600 w-full text-center">Visitar el Sitio Web</a>
                         </div>
                     </div>
-                    <a href="https://storybird.com" target="_blank" class="cta-button bg-cyan-600">Visitar el Sitio Web</a>
                 </div>
 
-                <!-- Pestaña Lector Inmersivo -->
                 <div id="tab-lector" class="tab-pane" role="tabpanel">
                     <h4 class="text-pink-700">Lector inmersivo de Microsoft</h4>
                     <p class="panel-description">Una herramienta gratuita que mejora las habilidades de lectura leyendo texto en voz alta, dividiéndolo en sílabas y optimizando el espaciado para mayor claridad.</p>
@@ -304,12 +302,11 @@
                         <div class="info-card">
                             <h6>Detalles Clave</h6>
                             <div class="feature-item"><span class="icon">👥</span><strong>Alcance:</strong> Usuarios de cualquier edad, útil para dislexia</div>
+                            <a href="https://www.onenote.com/learningtools" target="_blank" class="cta-button bg-pink-600 w-full text-center">Visitar el Sitio Web</a>
                         </div>
                     </div>
-                    <a href="https://www.onenote.com/learningtools" target="_blank" class="cta-button bg-pink-600">Visitar el Sitio Web</a>
                 </div>
 
-                <!-- Pestaña Colorín Colorado -->
                 <div id="tab-colorin" class="tab-pane" role="tabpanel">
                     <h4 class="text-yellow-700">Colorín Colorado</h4>
                     <p class="panel-description">Una plataforma de audiocuentos y fábulas con voces profesionales, música y efectos especiales, disponibles en castellano o inglés.</p>
@@ -322,12 +319,11 @@
                         <div class="info-card">
                             <h6>Detalles Clave</h6>
                             <div class="feature-item"><span class="icon">👥</span><strong>Alcance:</strong> Educación Infantil y Primaria</div>
+                             <a href="https://vocaeditorial.com" target="_blank" class="cta-button bg-yellow-500 w-full text-center">Visitar el Sitio Web</a>
                         </div>
                     </div>
-                    <a href="https://vocaeditorial.com" target="_blank" class="cta-button bg-yellow-500">Visitar el Sitio Web</a>
                 </div>
 
-                <!-- Pestaña Pictoescritura -->
                 <div id="tab-picto" class="tab-pane" role="tabpanel">
                     <h4 class="text-cyan-700">Pictoescritura</h4>
                     <p class="panel-description">Una metodología que conecta el lenguaje visual y verbal para estimular la creatividad, mejorar el rendimiento lectoescritor y abordar la falta de motivación.</p>
@@ -341,10 +337,11 @@
                         <div class="info-card">
                             <h6>Detalles Clave</h6>
                             <div class="feature-item"><span class="icon">👥</span><strong>Alcance:</strong> Currículum de Lengua de Educación Primaria</div>
+                            <a href="https://pictoescritura.com" target="_blank" class="cta-button bg-cyan-600 w-full text-center">Visitar el Sitio Web</a>
                         </div>
                     </div>
-                    <a href="https://pictoescritura.com" target="_blank" class="cta-button bg-cyan-600">Visitar el Sitio Web</a>
                 </div>
+
             </div>
         </div>
         
@@ -381,7 +378,7 @@
         </div>
     </footer>
 
-    <!-- NUEVO: Elemento para el Pop-up (Tooltip) -->
+    <!-- Elemento para el Pop-up (Tooltip) -->
     <div id="tooltip" class="tooltip"></div>
 
     <script>
@@ -429,7 +426,7 @@
                 });
             });
 
-            // NUEVO: Lógica para el Pop-up (Tooltip)
+            // Lógica para el Pop-up (Tooltip)
             const tooltip = document.getElementById('tooltip');
             const tooltippedItems = document.querySelectorAll('[data-tooltip]');
 
@@ -445,9 +442,8 @@
                 });
 
                 item.addEventListener('mousemove', (e) => {
-                    // Position the tooltip slightly below and to the right of the cursor
-                    tooltip.style.left = `${e.pageX + 10}px`;
-                    tooltip.style.top = `${e.pageY + 10}px`;
+                    tooltip.style.left = `${e.pageX + 15}px`;
+                    tooltip.style.top = `${e.pageY + 15}px`;
                 });
             });
         });
