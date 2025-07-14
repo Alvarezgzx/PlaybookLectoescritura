@@ -106,6 +106,7 @@
             border-radius: 0.375rem;
             margin-bottom: 0.5rem;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            cursor: help; /* Indica que el elemento tiene ayuda contextual */
         }
 
         .cta-button {
@@ -120,6 +121,44 @@
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        /* Estilos para el módulo "Para Saber Más" */
+        .more-info-module {
+            background-color: #fffbeb; /* Amarillo muy claro */
+            border: 2px solid #fde68a; /* Amarillo claro */
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .more-info-module h3 {
+            color: #b45309; /* Ámbar oscuro */
+        }
+        .more-info-module .cta-button {
+            background-color: #f59e0b; /* Ámbar */
+        }
+
+        /* NUEVO: Estilos para el Pop-up (Tooltip) */
+        #tooltip {
+            position: absolute;
+            background-color: var(--gris-oscuro);
+            color: var(--blanco);
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            max-width: 250px;
+            text-align: center;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            pointer-events: none; /* Para que no interfiera con el cursor */
+        }
+
+        #tooltip.visible {
+            opacity: 1;
+            visibility: visible;
         }
     </style>
 </head>
@@ -180,10 +219,10 @@
                     <div class="info-grid">
                         <div class="info-card">
                             <h6>Bases Pedagógicas</h6>
-                            <div class="feature-item"><span class="icon">🧠</span> Orientación Espacial</div>
-                            <div class="feature-item"><span class="icon">✍️</span> Psicomotricidad Fina</div>
-                            <div class="feature-item"><span class="icon">👁️</span> Coordinación Visomotora</div>
-                            <div class="feature-item"><span class="icon">🔊</span> Conciencia Fonológica</div>
+                            <div class="feature-item" data-tooltip="Habilidad para percibir la posición de los objetos en el espacio y la relación entre ellos."><span class="icon">🧠</span> Orientación Espacial</div>
+                            <div class="feature-item" data-tooltip="Coordinación de músculos, huesos y nervios para producir movimientos pequeños y precisos."><span class="icon">✍️</span> Psicomotricidad Fina</div>
+                            <div class="feature-item" data-tooltip="Capacidad de coordinar la visión con los movimientos del cuerpo (ojo-mano)."><span class="icon">👁️</span> Coordinación Visomotora</div>
+                            <div class="feature-item" data-tooltip="Habilidad para reconocer y manipular los sonidos del lenguaje hablado."><span class="icon">🔊</span> Conciencia Fonológica</div>
                         </div>
                         <div class="info-card">
                             <h6>Detalles Clave</h6>
@@ -200,9 +239,9 @@
                     <div class="info-grid">
                         <div class="info-card">
                             <h6>Bases Pedagógicas</h6>
-                            <div class="feature-item"><span class="icon">🗣️</span> Sonido-Grafía</div>
-                            <div class="feature-item"><span class="icon">🌍</span> Multilingüe</div>
-                            <div class="feature-item"><span class="icon">🎮</span> Juego Autónomo</div>
+                            <div class="feature-item" data-tooltip="Relación entre un fonema (sonido) y su grafema (letra o letras que lo representan)."><span class="icon">🗣️</span> Sonido-Grafía</div>
+                            <div class="feature-item" data-tooltip="Capacidad de usar o entender varios idiomas."><span class="icon">🌍</span> Multilingüe</div>
+                            <div class="feature-item" data-tooltip="Actividad lúdica que el niño puede realizar por sí mismo sin supervisión directa."><span class="icon">🎮</span> Juego Autónomo</div>
                         </div>
                         <div class="info-card">
                             <h6>Detalles Clave</h6>
@@ -220,9 +259,9 @@
                     <div class="info-grid">
                         <div class="info-card">
                             <h6>Bases Pedagógicas</h6>
-                            <div class="feature-item"><span class="icon">😊</span> Emocional</div>
-                            <div class="feature-item"><span class="icon">📊</span> Personalizado</div>
-                            <div class="feature-item"><span class="icon">🎲</span> Lúdico</div>
+                            <div class="feature-item" data-tooltip="Se refiere al desarrollo de la inteligencia emocional, la motivación y la autoestima."><span class="icon">😊</span> Emocional</div>
+                            <div class="feature-item" data-tooltip="Adaptación del contenido y ritmo de aprendizaje a las necesidades individuales del estudiante."><span class="icon">📊</span> Personalizado</div>
+                            <div class="feature-item" data-tooltip="Enfoque de aprendizaje que se basa en el juego y la diversión."><span class="icon">🎲</span> Lúdico</div>
                         </div>
                         <div class="info-card">
                             <h6>Detalles Clave</h6>
@@ -239,9 +278,9 @@
                     <div class="info-grid">
                         <div class="info-card">
                             <h6>Bases Pedagógicas</h6>
-                            <div class="feature-item"><span class="icon">🎨</span> Creatividad</div>
-                            <div class="feature-item"><span class="icon">✍️</span> Expresión Escrita</div>
-                            <div class="feature-item"><span class="icon">🤝</span> Colaborativo</div>
+                            <div class="feature-item" data-tooltip="Capacidad de generar nuevas ideas o conceptos."><span class="icon">🎨</span> Creatividad</div>
+                            <div class="feature-item" data-tooltip="Habilidad para comunicar ideas, pensamientos y sentimientos a través de la escritura."><span class="icon">✍️</span> Expresión Escrita</div>
+                            <div class="feature-item" data-tooltip="Fomenta el trabajo en equipo y la construcción conjunta del conocimiento."><span class="icon">🤝</span> Colaborativo</div>
                         </div>
                         <div class="info-card">
                             <h6>Detalles Clave</h6>
@@ -258,9 +297,9 @@
                     <div class="info-grid">
                         <div class="info-card">
                             <h6>Bases Pedagógicas</h6>
-                            <div class="feature-item"><span class="icon">🛠️</span> Habilidades</div>
-                            <div class="feature-item"><span class="icon">📖</span> Decodificación</div>
-                            <div class="feature-item"><span class="icon">💪</span> Confianza</div>
+                            <div class="feature-item" data-tooltip="Se refiere al desarrollo de competencias específicas de lectura y escritura."><span class="icon">🛠️</span> Habilidades</div>
+                            <div class="feature-item" data-tooltip="Proceso de traducir el texto escrito a los sonidos del lenguaje hablado."><span class="icon">📖</span> Decodificación</div>
+                            <div class="feature-item" data-tooltip="Fomento de la seguridad y la autoestima del lector."><span class="icon">💪</span> Confianza</div>
                         </div>
                         <div class="info-card">
                             <h6>Detalles Clave</h6>
@@ -277,8 +316,8 @@
                     <div class="info-grid">
                         <div class="info-card">
                             <h6>Bases Pedagógicas</h6>
-                            <div class="feature-item"><span class="icon">🎧</span> Comp. Auditiva</div>
-                            <div class="feature-item"><span class="icon">📚</span> Comp. Lectora</div>
+                            <div class="feature-item" data-tooltip="Habilidad para entender y procesar la información recibida a través del oído."><span class="icon">🎧</span> Comp. Auditiva</div>
+                            <div class="feature-item" data-tooltip="Capacidad para entender, interpretar y evaluar un texto escrito."><span class="icon">📚</span> Comp. Lectora</div>
                         </div>
                         <div class="info-card">
                             <h6>Detalles Clave</h6>
@@ -295,9 +334,9 @@
                     <div class="info-grid">
                         <div class="info-card">
                             <h6>Bases Pedagógicas</h6>
-                            <div class="feature-item"><span class="icon">🖼️</span> Visual-Verbal</div>
-                            <div class="feature-item"><span class="icon">💡</span> Creatividad</div>
-                            <div class="feature-item"><span class="icon">🚀</span> Motivación</div>
+                            <div class="feature-item" data-tooltip="Conexión entre el lenguaje de las imágenes y el lenguaje de las palabras."><span class="icon">🖼️</span> Visual-Verbal</div>
+                            <div class="feature-item" data-tooltip="Capacidad de generar nuevas ideas o conceptos."><span class="icon">💡</span> Creatividad</div>
+                            <div class="feature-item" data-tooltip="Impulso interno que dirige y mantiene la conducta hacia metas o fines determinados."><span class="icon">🚀</span> Motivación</div>
                         </div>
                         <div class="info-card">
                             <h6>Detalles Clave</h6>
@@ -306,23 +345,45 @@
                     </div>
                     <a href="https://pictoescritura.com" target="_blank" class="cta-button bg-cyan-600">Visitar el Sitio Web</a>
                 </div>
-
             </div>
+        </div>
+        
+        <!-- Módulo "Para Saber Más" -->
+        <div class="more-info-module">
+            <h3 class="text-2xl font-bold mb-2">Para Saber Más</h3>
+            <p class="max-w-2xl mx-auto text-gray-700 mb-6">
+                Las herramientas de este fichero fueron seleccionadas del excelente recurso de Cuadernos de Pedagogía. Te invitamos a explorar el documento original para descubrir aún más estrategias y plataformas.
+            </p>
+            <a href="https://www.cuadernosdepedagogia.com/Content/Documento.aspx?params=H4sIAAAAAAAEAMtMSbF1CTEAAmMzE0MTM7Wy1KLizPw8WyMDI2MDEwNjtbz8lNQQF2fb0ryU1LTMvNQUkJLMtEqX_OSQyoJU27TEnOJUtdSk_PxsFJPi4SYkF2TaZuYGFBmoGieCaaBIClzEs0g7UTsgv6gkMSURAD1O1jaOAAAAWKE" target="_blank" rel="noopener noreferrer" class="cta-button">
+                Leer Fichero Original
+            </a>
         </div>
     </main>
     
-    <footer class="bg-gris-oscuro text-gray-400 py-6">
+    <footer class="bg-gris-oscuro text-gray-400 py-8">
         <div class="container mx-auto px-6 text-center">
+            
+            <!-- Declaración de Ética con Texto Actualizado -->
+            <div class="mb-6 border-t border-b border-gray-700 py-4">
+                <h6 class="font-bold text-white mb-2">Declaración de Ética y Atribución</h6>
+                <p class="text-xs text-gray-500 max-w-3xl mx-auto">
+                    Este fichero tecnológico es un recurso de elaboración propia, creado a partir de una síntesis y adaptación de la información recopilada en el recurso "Fichero de recursos y herramientas para la lectoescritura" de <a href="https://www.cuadernosdepedagogia.com/Content/Documento.aspx?params=H4sIAAAAAAAEAMtMSbF1CTEAAmMzE0MTM7Wy1KLizPw8WyMDI2MDEwNjtbz8lNQQF2fb0ryU1LTMvNQUkJLMtEqX_OSQyoJU27TEnOJUtdSk_PxsFJPi4SYkF2TaZuYGFBmoGieCaaBIClzEs0g7UTsgv6gkMSURAD1O1jaOAAAAWKE" target="_blank" rel="noopener noreferrer" class="text-cian-secundario hover:underline">Cuadernos de Pedagogía</a>, así como de la investigación en las páginas web de cada herramienta.
+                </p>
+            </div>
+
             <p class="text-sm">Elaborado por Jesús Ángel Álvarez González</p>
-            <p class="text-xs mt-3">
+            <p class="text-xs mt-3 text-gray-500">
                 &copy; 2025 Playbook de Lectoescritura. Todos los derechos reservados. | 
                 <a href="https://www.linkedin.com/in/angelalvarezg97/" target="_blank" rel="noopener noreferrer" class="font-semibold text-cian-secundario hover:underline">
                     Conecta en LinkedIn
                 </a>
             </p>
         </div>
-    </div>
-</footer>
+    </footer>
+
+    <!-- NUEVO: Elemento para el Pop-up (Tooltip) -->
+    <div id="tooltip" class="tooltip"></div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Inicializar Lucide Icons
@@ -357,7 +418,6 @@
                 const targetPanel = document.getElementById(targetPanelId);
                 if (targetPanel) {
                     targetPanel.classList.add('active');
-                    // Volver a inicializar Lucide Icons si es necesario para los íconos cargados dinámicamente
                     lucide.createIcons();
                 }
             }
@@ -366,6 +426,28 @@
                 tab.addEventListener('click', (e) => {
                     e.preventDefault();
                     switchTab(e.currentTarget);
+                });
+            });
+
+            // NUEVO: Lógica para el Pop-up (Tooltip)
+            const tooltip = document.getElementById('tooltip');
+            const tooltippedItems = document.querySelectorAll('[data-tooltip]');
+
+            tooltippedItems.forEach(item => {
+                item.addEventListener('mouseenter', (e) => {
+                    const tooltipText = item.getAttribute('data-tooltip');
+                    tooltip.textContent = tooltipText;
+                    tooltip.classList.add('visible');
+                });
+
+                item.addEventListener('mouseleave', () => {
+                    tooltip.classList.remove('visible');
+                });
+
+                item.addEventListener('mousemove', (e) => {
+                    // Position the tooltip slightly below and to the right of the cursor
+                    tooltip.style.left = `${e.pageX + 10}px`;
+                    tooltip.style.top = `${e.pageY + 10}px`;
                 });
             });
         });
