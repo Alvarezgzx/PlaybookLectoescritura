@@ -2,7 +2,7 @@
 
 [[redirects]]
   # La ruta en tu sitio que activará el proxy.
-  from = "/asistente-ia/"
+  from = "/asistente-ia.html/"
   
   # La URL de tu aplicación de Google Cloud Run a la que se redirigirá.
   to = "https://copy-of-generador-de-planes-de-clase-de-lectoescr-243793841218.us-west1.run.app/"
