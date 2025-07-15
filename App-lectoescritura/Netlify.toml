@@ -1,0 +1,15 @@
+# Reglas de Redirección y Proxy para Netlify
+
+[[redirects]]
+  # Esta línea le dice a Netlify que intercepte cualquier petición a /api/
+  from = "/api/*"
+
+  # Esta es la dirección de tu backend a donde se enviará la petición.
+  # Asegúrate de que sea la URL correcta de Cloud Run.
+  to = "https://applectoescritura-backend-702516870563.europe-west1.run.app/:splat"
+
+  # El status 200 lo convierte en un proxy (reenvío invisible).
+  status = 200
+
+  # Esto asegura que la regla se aplique siempre.
+  force = true
