@@ -6,10 +6,15 @@
   
   # La URL REAL de tu backend en Cloud Run.
   # El ":splat" al final es muy importante, no lo borres.
-  to = "https://copy-of-generador-de-planes-de-clase-de-lectoescr-243793841218.us-west1.run.app"
+<<<<<<< HEAD
+  to = "https://copy-of-generador-de-planes-de-clase-de-lectoescr-243793841218.us-west1.run.app/:slap"
+=======
+  to = "https://applectoescritura-backend-702516870563.europe-west1.run.app//:splat"
+>>>>>>> parent of 8391207 (Update Netlify.toml)
   
   # El status 200 lo convierte en un proxy.
   status = 200
   
   # Esto asegura que la regla se aplique siempre.
   force = true
+
