@@ -2,5 +2,5 @@
 # Asegura que si un usuario recarga la página en /asistente-ia/plan, no reciba un error 404.
 [[redirects]]
   from = "/asistente-ia/*"
-  to = "/asistente-ia/index.html"
+  to = "/asistente-ia/asistente.html"
   status = 200
