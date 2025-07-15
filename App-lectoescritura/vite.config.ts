@@ -1,12 +1,21 @@
-import path from 'path';
+import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  // La base DEBE coincidir con la ruta donde vive la aplicación.
-  base: '/asistente-ia/', 
+  // Ya no necesitamos una base porque todo se sirve desde la raíz
+  base: '/', 
+  build: {
+    rollupOptions: {
+      input: {
+        // Define los dos archivos HTML como puntos de entrada
+        main: resolve(__dirname, 'index.html'),
+        asistente: resolve(__dirname, 'asistente.html'),
+      },
+    },
+  },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '.'),
+      '@': resolve(__dirname, '.'),
     }
   }
 });
