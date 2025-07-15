@@ -1,16 +1,12 @@
 import { LessonPlanRequest, LessonPlan } from "../types";
 
-/**
- * Llama al endpoint del backend para generar un plan de clase.
- * El frontend no conoce la clave de API ni el prompt; solo envía la solicitud 
- * a su propio servidor y espera una respuesta.
- * @param request - Un objeto con la edad, número de sesiones y objetivo.
- * @returns Una promesa que se resuelve con el plan de clase generado.
- */
+// ¡IMPORTANTE! Esta es la URL directa a tu backend.
+const BACKEND_URL = 'https://applectoescritura-backend-702516870563.europe-west1.run.app/generate-plan';
+
 export const generateLessonPlan = async (request: LessonPlanRequest): Promise<LessonPlan> => {
   try {
-    // La solicitud ahora va a tu propio backend, a través de la ruta del proxy.
-    const response = await fetch('/api/generate-plan', {
+    // La solicitud ahora va directamente a la URL del backend.
+    const response = await fetch(BACKEND_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
