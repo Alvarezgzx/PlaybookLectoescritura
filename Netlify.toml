@@ -1,20 +1,13 @@
-# Reglas de Redirección y Proxy para Netlify
-
+# Regla para reenviar las llamadas de la API a tu backend en Google Cloud Run.
 [[redirects]]
-  # Cualquier petición que tu frontend haga a "/api/..."
   from = "/api/*"
-  
-  # La URL REAL de tu backend en Cloud Run.
-  # El ":splat" al final es muy importante, no lo borres.
-<<<<<<< HEAD
-  to = "https://copy-of-generador-de-planes-de-clase-de-lectoescr-243793841218.us-west1.run.app/:slap"
-=======
-  to = "https://applectoescritura-backend-702516870563.europe-west1.run.app//:splat"
->>>>>>> parent of 8391207 (Update Netlify.toml)
-  
-  # El status 200 lo convierte en un proxy.
+  to = "https://applectoescritura-backend-702516870563.europe-west1.run.app/:splat"
   status = 200
-  
-  # Esto asegura que la regla se aplique siempre.
   force = true
 
+# Regla para que tu aplicación de React (Single Page Application) funcione correctamente.
+# Esto asegura que si alguien recarga la página en /asistente-ia/plan, no reciba un 404.
+[[redirects]]
+  from = "/asistente-ia/*"
+  to = "/asistente-ia/index.html"
+  status = 200
